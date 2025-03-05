@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div></div>
+  <div>About Page</div>
 </template>
 
 <!-- Local Component Specific styling -->

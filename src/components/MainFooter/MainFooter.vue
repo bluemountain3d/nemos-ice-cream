@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div></div>
+  <footer>Footer</footer>
 </template>
 
 <!-- Local Component Specific styling -->

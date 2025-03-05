@@ -1,0 +1,109 @@
+:root {
+  // Font families
+  --ff-primary: 'Julius Sans One', sans-serif;
+  --ff-secondary: 'Inter', sans-serif;
+  --ff-tertiary: 'Bonbon', cursive;
+
+  // Size based font sizes
+  --fs-100: 1rem;
+  --fs-200: 1.25rem;
+  --fs-300: 1.5rem;
+  --fs-400: 2rem;
+  --fs-500: 4rem;
+
+  // Semantic font sizes
+  --heading-1: var(--fs-500);
+  --heading-2: var(--fs-400);
+  --heading-3: var(--fs-100);
+  --body-text: var(--fs-200);
+  --label-text: var(--fs-300);
+
+  // Backgrounds
+  --bg-main: #fdb870; // Main page background (foundation)
+  --bg-section: #fff3e0; // Sections on top (secondary bg)
+  --bg-header: #fd9844; // Header (accented background)
+  --bg-footer: #402f17; // Footer (dark contrast)
+  --bg-button: #214e6a; // Buttons (action base)
+
+  // Text
+  --text-primary: #402f17; // Main text (sections, readable on light bg)
+  --text-light: #fff3e0; // Light text (header, footer)
+  --text-link: #fd9844; // Links in footer (accented text)
+
+  // Optional: Semantic aliases
+  --primary: #fd9844; // Bold orange for key accents (header, links)
+  --secondary: #fdb870; // Main bg as secondary (less intense than primary)
+  --action: #214e6a; // Blue for interactive elements (buttons)
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  background-color: var(--bg-main);
+  font-family: var(--ff-secondary);
+  font-size: var(--body-text);
+  line-height: 1.5;
+  letter-spacing: -2.2%;
+  color: var(--text-primary);
+}
+
+.heading-1 {
+  font-family: var(--ff-primary);
+  font-size: var(--heading-1);
+}
+.heading-2 {
+  font-family: var(--ff-secondary);
+  font-size: var(--heading-2);
+}
+.heading-3 {
+  font-family: var(--ff-secondary);
+  font-size: var(--heading-3);
+}
+
+.primary-btn {
+  font-size: var(--fs-300);
+  padding-block: 0.291667em;
+  padding-inline: 1.083333em;
+  background-color: var(--bg-button);
+  color: var(--text-light);
+
+  transition: background-color 0.15s ease;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #2d6c93;
+  }
+
+  &:active {
+    background-color: #439ed7;
+  }
+
+  &:disabled {
+    background-color: #5d6d77;
+  }
+}
+
+.page-section {
+  --_padding-x: 4.615385vmin;
+  --_padding-y: 4.615385vmin; //6.666667vmin;
+
+  width: 100%;
+  padding-block: var(--_padding-y);
+  padding-inline: var(--_padding-x);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (min-width: 768px) {
+    --_padding-x: 4.796163vmin;
+    --_padding-y: 4.796163vmin;
+  }
+
+  @media screen and (min-width: 1024px) {
+    --_padding-x: 3.402778vmax;
+    --_padding-y: 3.402778vmax;
+  }
+}

@@ -1,19 +1,35 @@
-### About the design
+# nemos-glassbar
 
-## Nemo’s Ice Cream
-This is a design for a fictional ice cream shop inspired by Finding Nemo. The goal is to create a warm and welcoming experience with subtle marine elements.
+This template should help get you started developing with Vue 3 in Vite.
 
-### The Design
+## Recommended IDE Setup
 
-#### Color palette and fonts
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
-Color palette is inspired by the clownfish and a calm ocean, and consists of soft colors such as orange, creamy white, a warm dark brown and a calm dark blue. The fonts are easy to read, with a more playful style for the logo to make it stand out. 
+## Customize configuration
 
-#### Page Structure
-- The homepage represents the **ocean surface**.
-- Scrolling down takes the user **underwater** to the product page.
-- At the bottom is the footer, symbolizing the **ocean floor**.
+See [Vite Configuration Reference](https://vite.dev/config/).
 
-#### Shapes and Layout
+## Project Setup
 
-The vision is to mimic the shapes of the ocean. There's shapes representing waves and round shapes representing bubbles. The blue angular buttons balance out the round shapes and create contrast and harmoney between the two, and the cute illustrations create a welcoming feel for all ages! In conclusion, the theme of the design is quite sudtle since we have focused on the the atmosphere and feeling of the ocean, rather than obvious marine elements. We believe this creates a clean, stylish and easy to understand design.
+```sh
+pnpm install
+```
+
+### Compile and Hot-Reload for Development
+
+```sh
+pnpm dev
+```
+
+### Compile and Minify for Production
+
+```sh
+pnpm build
+```
+
+### Lint with [ESLint](https://eslint.org/)
+
+```sh
+pnpm lint
+```

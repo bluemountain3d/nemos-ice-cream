@@ -46,6 +46,8 @@ header {
   background-color: transparent;
   height: 50px;
   position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 p {
@@ -83,6 +85,9 @@ nav #sillystarfish {
 }
 
 .navlinks {
+  background-color: var(--bg-main);
+  z-index: 9;
+
   flex-direction: column;
   position: absolute;
   column-gap: 10px;

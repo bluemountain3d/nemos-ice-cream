@@ -5,51 +5,64 @@ import { ref } from 'vue';
 const showElement = ref(false);
 
 function hideElement() {
-  console.log('Klick!');
   showElement.value = !showElement.value;
 }
-
-//document.getElementById('darkHamburger').addEventListener('click', openIt(theNavPage))
 </script>
 
 <template>
   <header>
-    <h1 v-if="showElement">Nemo's Ice Cream</h1>
-    <button @click="hideElement"></button>
+    <p v-if="showElement">Nemo's Ice Cream</p>
+
+    <button
+      @click="hideElement"
+      id="menuButton"
+      :style="{
+        backgroundImage: showElement
+          ? 'url(../../../assets/images/x.svg)'
+          : 'url(../../../assets/images/BurgerMenuBrown.svg)',
+      }"
+    ></button>
 
     <transition name="fade">
-    <nav v-if="showElement">
-      <img src="../../../assets/images/nemo-solid.PNG" alt="" id="solidnemo" />
-      <img
-        src="../../../assets/images/silly-starfish.PNG"
-        alt="A white starfish"
-        id="sillystarfish"
-      />
-      <div class="navlinks">
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/">Products</RouterLink>
-      </div>
-    </nav>
-</transition>
+      <nav v-if="showElement">
+        <img src="../../../assets/images/nemo-solid.PNG" alt="" id="solidnemo" />
+        <img
+          src="../../../assets/images/silly-starfish.PNG"
+          alt="A white starfish"
+          id="sillystarfish"
+        />
+        <div class="navlinks">
+          <RouterLink to="/" @click="hideElement">Home</RouterLink>
+          <RouterLink to="/about" @click="hideElement">About</RouterLink>
+          <RouterLink to="/" @click="hideElement">Products</RouterLink>
+        </div>
+      </nav>
+    </transition>
   </header>
 </template>
 
 <style scoped lang="scss">
-
 header {
   background-color: transparent;
   height: 50px;
+  position: sticky;
 }
 
-h1 {
-  color: #fff3e0;
-  font-family: 'Inter', sans-serif;
+p {
+  color: var(--text-light);
+  font-family: var(--ff-secondary);
   font-size: 24px;
   padding-left: 24px;
   position: absolute; // ändra sedan.................................................
-  margin-top: 8px;
-  display: none; // DISPLAY NONE <-------------------
+  margin-top: 0px;
+  transition:
+    background-image 0.5s ease-in-out,
+    opacity 0.5s ease-in-out;
+  background-color: var(--bg-header);
+  height: 50px;
+  width: 100vw;
+  font-weight: 800;
+  padding-top: 7px;
 }
 
 nav #solidnemo {
@@ -82,8 +95,8 @@ nav #sillystarfish {
 }
 
 nav a {
-  color: #402f17;
-  font-family: 'Julius Sans One', sans-serif;
+  color: var(--text-primary);
+  font-family: var(--ff-primary);
   font-size: 70px;
   text-decoration: none;
   margin: 40px;
@@ -93,24 +106,28 @@ button {
   z-index: 1;
   width: 50px;
   height: 50px;
-  float: right;
-  padding-right: 15px; // funkar inte nu...............................................
+  right: 15px;
   background-color: transparent;
-  background-image: url('../../../assets/images/BurgerMenuBrown.svg');
   background-position: center;
   background-size: cover;
   border: 0;
+  transition:
+    background-image 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
+  position: absolute;
 }
 
 // __________Fade in / out___________
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
   transition: opacity 0.5s ease;
 }
-.fade-enter-from, .fade-leave-to {
+.fade-enter-from,
+.fade-leave-to {
   opacity: 0;
 }
-.fade-enter-to, .fade-leave-from {
+.fade-enter-to,
+.fade-leave-from {
   opacity: 1;
 }
-
 </style>

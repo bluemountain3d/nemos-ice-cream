@@ -52,14 +52,17 @@ body {
 .heading-1 {
   font-family: var(--ff-primary);
   font-size: var(--heading-1);
+  font-weight: 400;
 }
 .heading-2 {
   font-family: var(--ff-secondary);
   font-size: var(--heading-2);
+  font-weight: 500;
 }
 .heading-3 {
   font-family: var(--ff-secondary);
   font-size: var(--heading-3);
+  font-weight: 500;
 }
 
 .primary-btn {
@@ -68,6 +71,7 @@ body {
   padding-inline: 1.083333em;
   background-color: var(--bg-button);
   color: var(--text-light);
+  border: none;
 
   transition: background-color 0.15s ease;
 

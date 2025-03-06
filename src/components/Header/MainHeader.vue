@@ -1,22 +1,37 @@
 <script setup>
 import { RouterLink } from 'vue-router';
+import { ref } from 'vue';
+
+const showElement = ref(false);
+
+function hideElement() {
+  console.log('Klick!');
+  showElement.value = !showElement.value;
+}
+
+//document.getElementById('darkHamburger').addEventListener('click', openIt(theNavPage))
 </script>
 
 <template>
   <header>
-    <h1>Nemo´s Ice Cream</h1>
-    <img src="../../../assets/images/BurgerMenuWhite.svg" alt="Menu" class="whitehamburger">
-    <img src="../../../assets/images/BurgerMenuBrown.svg" alt="White clown fish" class="darkhamburger">
+    <h1 v-if="showElement">Nemo's Ice Cream</h1>
+    <button @click="hideElement"></button>
 
-    <nav>
-      <img src="../../../assets/images/nemo-solid.PNG" alt="" class="solidnemo">
-      <img src="../../../assets/images/silly-starfish.PNG" alt="A white starfish" class="sillystarfish">
+    <transition name="fade">
+    <nav v-if="showElement">
+      <img src="../../../assets/images/nemo-solid.PNG" alt="" id="solidnemo" />
+      <img
+        src="../../../assets/images/silly-starfish.PNG"
+        alt="A white starfish"
+        id="sillystarfish"
+      />
       <div class="navlinks">
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/">Products</RouterLink>
       </div>
     </nav>
+</transition>
   </header>
 </template>
 
@@ -32,17 +47,13 @@ h1 {
   font-family: 'Inter', sans-serif;
   font-size: 24px;
   padding-left: 24px;
-  position: absolute; // ändra sedan?
+  position: absolute; // ändra sedan.................................................
   margin-top: 8px;
-  display: none; // Toggla vid knapptryck
+  display: none; // DISPLAY NONE <-------------------
 }
 
-nav {
-  display: none; // Toggla vid knapptryck
-}
-
-nav .solidnemo {
-  width: 74px;
+nav #solidnemo {
+  width: 67px;
   height: 44px;
   position: absolute;
   transform: scaleX(-1);
@@ -50,8 +61,8 @@ nav .solidnemo {
   left: 4vw;
 }
 
-nav .sillystarfish {
-  width: 73px;
+nav #sillystarfish {
+  width: 63px;
   height: 64px;
   position: absolute;
   top: 78vh;
@@ -67,27 +78,39 @@ nav .sillystarfish {
   align-items: center;
   height: 100vh;
   width: 100vw;
-
+  z-index: -1;
 }
 
 nav a {
-  color: #402F17;
+  color: #402f17;
   font-family: 'Julius Sans One', sans-serif;
   font-size: 70px;
   text-decoration: none;
   margin: 40px;
 }
 
-img {
+button {
+  z-index: 1;
   width: 50px;
   height: 50px;
   float: right;
-  padding-right: 15px;
+  padding-right: 15px; // funkar inte nu...............................................
+  background-color: transparent;
+  background-image: url('../../../assets/images/BurgerMenuBrown.svg');
+  background-position: center;
+  background-size: cover;
+  border: 0;
 }
 
-.whitehamburger {
-  display: none; // Toggla vid knapptryck
+// __________Fade in / out___________
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s ease;
 }
-
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+}
+.fade-enter-to, .fade-leave-from {
+  opacity: 1;
+}
 
 </style>

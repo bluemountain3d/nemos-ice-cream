@@ -23,7 +23,7 @@ function resetForm() {
 
 <template>
   <section class="page-section page_container">
-    <div>
+    <div class="about_container">
       <article class="about_text">
         <h1 class="heading-1 about_title">about us</h1>
         <p>
@@ -44,24 +44,32 @@ function resetForm() {
         </p>
       </article>
     </div>
-    <div class="vertical_line"></div>
-    <hr class="horizontal_line" />
-
     <div>
       <img class="nemo_icon_Solid" :src="nemoIconSolid" alt="nemo" />
       <div class="form_container">
         <h2 class="heading-1 about_title">contact</h2>
         <form id="contact_formula">
-          <label for="name">Name*</label>
-          <input type="text" id="name" v-model="form.name" required /><br />
-          <label for="email">Email*</label>
-          <input type="email" id="email" v-model="form.email" required /><br />
-          <label for="phone">Phone</label>
-          <input type="number" id="phone" v-model="form.phone" /><br />
-          <label for="subject">Subject*</label>
-          <input type="text" id="subject" v-model="form.subject" required /><br />
-          <label for="message">Message*</label><br />
-          <textarea id="message" v-model="form.message" required></textarea>
+          <div class="input_group">
+            <label for="name">Name*</label>
+            <input type="text" id="name" v-model="form.name" required />
+          </div>
+          
+          <div class="input_group">
+            <label for="email">Email*</label>
+            <input type="email" id="email" v-model="form.email" required />
+          </div>
+          <div class="input_group">
+            <label for="phone">Phone</label>
+            <input type="number" id="phone" v-model="form.phone" />
+          </div>
+          <div class="input_group">
+            <label for="subject">Subject*</label>
+            <input type="text" id="subject" v-model="form.subject" required />
+          </div>
+          <div class="input_group input_group--column">
+            <label for="message">Message*</label>
+            <textarea id="message" v-model="form.message" required></textarea>
+          </div>
         </form>
         <div class="form_button">
           <button
@@ -92,9 +100,8 @@ function resetForm() {
 //----------------PAGE SECTION----------------
 .page_container {
   display: grid;
-  place-content: center;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   width: 100%;
   max-width: 91.3vw;
   height: auto;
@@ -102,63 +109,65 @@ function resetForm() {
   margin-left: 4.35vw;
   grid-template-columns: auto;
   row-gap: 1.3vh;
+  padding: 1.6875rem 1rem;
 
   @media screen and (min-width: 768px) {
     grid-template-columns: auto;
     margin-top: 4.35vh;
     margin-bottom: 4.35vh;
     margin-left: 4.35vw;
+    padding: 1.6875rem 6.656rem;
+
   }
 
   @media screen and (min-width: 1024px) {
-    grid-template-columns: 28vw 1px auto;
-    column-gap: 8vw;
+    grid-template-columns: 1fr 1fr;
+    padding: 3.375rem 6.438rem;
   }
 }
-
+.about_container{
+  display: grid;
+}
+//----------------TITLE----------------
 .about_title {
+  margin: 0;
   text-align: center;
-  font-size: var(--heading-2);
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: .4375rem;
+  filter: drop-shadow(0 .25rem .125rem rgba(0,0,0,.25));
 
   @media screen and (min-width: 768px) {
     font-size: var(--heading-1);
-  }
-}
-//----------------MIDDLE LINE----------------
-.vertical_line {
-  display: none;
-
-  @media screen and (min-width: 1024px) {
-    width: 0;
-    display: grid;
-    height: 34.5vh;
-    border-left: 0.1vw solid var(--bg-footer);
+    margin-bottom: 1.25rem;
   }
 }
 
-.horizontal_line {
-  height: 0.15vh;
-  width: 69vw;
-  color: var(--bg-footer);
-
-  @media screen and (min-width: 768px) {
-    width: 66.2vw;
-  }
-
-  @media screen and (min-width: 1024px) {
-    display: none;
-  }
-}
 //----------------TEXT----------------
 .about_text {
-  max-width: 69vw;
+  width: 100%;
+  max-width: 70ch;
+  padding-block-end: 2.4375rem;
+  border-bottom: 1px solid var(--bg-footer);
+  
+  & > p {
+    margin: 0;
+  }
+
+  & > p + p {
+    padding-block-start: 1.5rem;
+  }
 
   @media screen and (min-width: 768px) {
-    max-width: 66.2vw;
+    padding-block-end: 4.5rem;
+    
   }
 
   @media screen and (min-width: 1024px) {
-    max-width: 28vw;
+    padding-inline-end: 8vw;
+    padding-block-end: 0;
+    border-bottom: 0;
   }
 }
 //----------------IMAGE---------------
@@ -181,47 +190,78 @@ function resetForm() {
   }
 }
 .form_container {
-  max-width: fit-content;
+  width: 100%;
+  margin-top: 2rem;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 2.625rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    margin-top: 0;
+  }
+  
 }
 //----------------FORM----------------
 form {
   font-size: var(--label-text);
+  display: grid;
+  row-gap: 1.375rem;
+
+  @media screen and (min-width: 1024px) {
+    padding-inline-start: 8vw;
+    border-left: 1px solid var(--text-primary);
+  }
 
   label {
-    width: 6vw;
-    min-width: 98px;
-    max-width: 160px;
-    clear: left;
-    padding-right: 10px;
+    width: 12ch;
   }
   input {
-    width: 11.5vw;
-    height: 5vh;
-    min-width: 200px;
-    margin-top: -5px;
-    margin-bottom: 22px;
-    @media screen and (min-width: 768px) {
-      width: 14vw;
-      min-width: 250px;
+    width: 100%;
+    padding: 1em;
+    border: 1px solid var(--text-primary);
+    line-height: 1;
+    
+  }
+  .input_group {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    align-items: center;
+
+    &--column {
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+      align-items: flex-start;
     }
   }
   input,
   label {
     float: left;
   }
+  
   textarea {
-    width: 100%; // Adapts to content size
-    height: 6vh;
+    width: 100%; 
+    height: auto;
+    min-height: 12.5rem;
+    border: 1px solid var(--text-primary);
 
     @media screen and (min-width: 768px) {
       height: 10vh;
     }
   }
 }
+
 .form_button {
   display: flex;
   justify-content: flex-end;
   width: 100%;
+  margin-block-start: 2rem;
+  
+  @media screen and (min-width: 720px) {
+    margin-block-start: 2.25rem;
+  }
+
   button {
     margin-left: 20px;
   }

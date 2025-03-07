@@ -11,8 +11,6 @@ function hideElement() {
 
 <template>
   <header>
-    <p v-if="showElement">Nemo's Ice Cream</p>
-
     <button
       @click="hideElement"
       id="menuButton"
@@ -25,6 +23,7 @@ function hideElement() {
 
     <transition name="fade">
       <nav v-if="showElement">
+        <p>Nemo's Ice Cream</p>
         <img src="../../../assets/images/nemo-solid.PNG" alt="" id="solidnemo" />
         <img
           src="../../../assets/images/silly-starfish.PNG"
@@ -34,7 +33,7 @@ function hideElement() {
         <div class="navlinks">
           <RouterLink to="/" @click="hideElement">Home</RouterLink>
           <RouterLink to="/about" @click="hideElement">About</RouterLink>
-          <RouterLink to="/" @click="hideElement">Products</RouterLink>
+          <a href="#products" @click="hideElement">Products</a> <!--Scrolla ner till elementet med ett id ?-->
         </div>
       </nav>
     </transition>
@@ -44,10 +43,11 @@ function hideElement() {
 <style scoped lang="scss">
 header {
   background-color: transparent;
-  height: 50px;
+ // height: 50px;
   position: sticky;
   top: 0;
   z-index: 10;
+  max-width: 100vw;
 }
 
 p {
@@ -57,15 +57,13 @@ p {
   padding-left: 24px;
   position: absolute; // ändra sedan.................................................
   margin-top: 0px;
-  transition:
-    background-image 0.5s ease-in-out,
-    opacity 0.5s ease-in-out;
   background-color: var(--bg-header);
   height: 50px;
-  width: 100vw;
+  width: 100%;
   font-weight: 800;
   padding-top: 7px;
 }
+
 
 nav #solidnemo {
   width: 67px;
@@ -87,7 +85,6 @@ nav #sillystarfish {
 .navlinks {
   background-color: var(--bg-main);
   z-index: 9;
-
   flex-direction: column;
   position: absolute;
   column-gap: 10px;
@@ -95,8 +92,9 @@ nav #sillystarfish {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   z-index: -1;
+overflow-x: hidden;
 }
 
 nav a {

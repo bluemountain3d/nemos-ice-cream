@@ -59,6 +59,6 @@ import ProductsList from '@/components/Products/ProductsList.vue';
     }
   }
 }
-  }
-}
+
+
 </style>

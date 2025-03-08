@@ -3,6 +3,7 @@ import ProductsList from '@/components/Products/ProductsList.vue';
 </script>
 
 <template>
+  <div id="headerBackground"></div>
   <section class="page-section" id="products">
     <section class="product-list-section">
       <h2>Our flavors</h2>
@@ -14,6 +15,15 @@ import ProductsList from '@/components/Products/ProductsList.vue';
 </template>
 
 <style scoped lang="scss">
+
+#headerBackground {
+  background-color: var(--bg-header);
+  height: 50px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+}
+
 .product-list-section {
   background-color: var(--bg-section);
   color: var(--text-primary);

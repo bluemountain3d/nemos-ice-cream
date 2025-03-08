@@ -3,7 +3,9 @@ import ProductsList from '@/components/Products/ProductsList.vue';
 </script>
 
 <template>
-  <div id="headerBackground"></div>
+  <div id="headerBackground">
+    <p>Nemo's Ice Cream</p>
+  </div>
   <section class="page-section" id="products">
     <section class="product-list-section">
       <h2>Our flavors</h2>
@@ -22,6 +24,20 @@ import ProductsList from '@/components/Products/ProductsList.vue';
   width: 100%;
   position: sticky;
   top: 0;
+}
+
+p { // Header text
+  color: var(--text-light);
+  font-family: var(--ff-secondary);
+  font-size: 24px;
+  padding-left: 24px;
+  position: fixed;
+  top: -24px;
+  height: 50px;
+  width: 100%;
+  font-weight: 800;
+  padding-top: 7px;
+  background-color: var(--bg-header);
 }
 
 .product-list-section {

@@ -19,6 +19,10 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue'),
     },
   ],
+  scrollBehavior(to, from, savedPosition) {
+    // returns scroll position to the top
+    return { top: 0 }
+  },
 });
 
 export default router;

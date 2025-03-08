@@ -33,7 +33,7 @@ function hideElement() {
         <div class="navlinks">
           <RouterLink to="/" @click="hideElement">Home</RouterLink>
           <RouterLink to="/about" @click="hideElement">About</RouterLink>
-          <a href="#products" @click="hideElement">Products</a> <!--Scrolla ner till elementet med ett id ?-->
+          <RouterLink to="/#products" @click="hideElement">Products</Routerlink>
         </div>
       </nav>
     </transition>

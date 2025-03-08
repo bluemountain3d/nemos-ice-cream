@@ -22,11 +22,11 @@ import products from '/src/components/Products/products.js';
 article {
   display: flex;
   align-items: center;
-  margin-bottom: 46px;
+  margin-bottom: 2.875rem;
   flex-direction: column;
   overflow: hidden;
-  padding-bottom: 6px;
-  max-width: 350px;
+  padding-bottom: 0.375rem;
+  max-width: 21.875rem;
 
   img,
   div {
@@ -44,8 +44,8 @@ article {
     background-color: var(--bg-button);
     color: var(--text-light);
     margin-top: 1rem;
-    min-width: 235px;
-    height: 65px;
+    min-width: 14.688rem;
+    height: 4.063rem;
     display: flex;
     flex-direction: column;
     justify-content: center;

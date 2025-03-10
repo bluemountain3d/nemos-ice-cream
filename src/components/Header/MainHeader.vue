@@ -41,11 +41,9 @@ function hideElement() {
 
 <style scoped lang="scss">
 // TODO:
-// Lägg även till texten på headerbakgrunden i productsection.
-// Skapa headerBakground på about-sidan också.
 
-// Fixa så att products-länken verkligen scrollar dit.
 // Skapa media queries.
+// Om tid finns: kolla på headerbakgrunds-fix
 
 
 button {

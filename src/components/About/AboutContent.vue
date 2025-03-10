@@ -23,9 +23,9 @@ function resetForm() {
 
 <template>
 
-  <div id="headerBackground">
+  <!-- <div id="headerBackground">
     <p>Nemo's Ice Cream</p>
-  </div>
+  </div> -->
 
   <section class="page-section">
     <section class=" page_container">
@@ -105,27 +105,27 @@ function resetForm() {
 
 <style scoped lang="scss">
 
-#headerBackground {
-  background-color: var(--bg-header);
-  height: 50px;
-  width: 100%;
-  position: sticky;
-  z-index: 2;
-}
+// #headerBackground {
+//   background-color: var(--bg-header);
+//   height: 50px;
+//   width: 100%;
+//   position: sticky;
+//   z-index: 2;
+// }
 
-#headerBackground p { // Header text
-  color: var(--text-light);
-  font-family: var(--ff-secondary);
-  font-size: 24px;
-  padding-left: 24px;
-  position: fixed;
-  top: -24px;
-  height: 50px;
-  width: 100%;
-  font-weight: 800;
-  padding-top: 7px;
-  background-color: var(--bg-header);
-}
+// #headerBackground p { // Header text
+//   color: var(--text-light);
+//   font-family: var(--ff-secondary);
+//   font-size: 24px;
+//   padding-left: 24px;
+//   position: fixed;
+//   top: -24px;
+//   height: 50px;
+//   width: 100%;
+//   font-weight: 800;
+//   padding-top: 7px;
+//   background-color: var(--bg-header);
+// }
 
 //----------------PAGE SECTION----------------
 .page_container {

@@ -4,9 +4,9 @@ import ProductsList from '@/components/Products/ProductsList.vue';
 
 <template>
 
-  <div id="headerBackground">
+  <!-- <div id="headerBackground">
     <p>Nemo's Ice Cream</p>
-  </div>
+  </div> -->
   <section class="page-section" id="products">
     <section class="product-list-section">
       <h2>Our flavors</h2>
@@ -19,27 +19,27 @@ import ProductsList from '@/components/Products/ProductsList.vue';
 
 <style scoped lang="scss">
 
-#headerBackground {
-  background-color: var(--bg-header);
-  height: 50px;
-  width: 100%;
-  position: sticky;
-  margin-bottom: 80px; // - Tillfälligt, ändra till rätt marginal sedan -
-}
+// #headerBackground {
+//   background-color: var(--bg-header);
+//   height: 50px;
+//   width: 100%;
+//   position: sticky;
+//   margin-bottom: 30px; // - Tillfälligt, ändra till rätt marginal sedan -
+// }
 
-#headerBackground p { // Header text
-  color: var(--text-light);
-  font-family: var(--ff-secondary);
-  font-size: 24px;
-  padding-left: 24px;
-  position: fixed;
-  top: -24px;
-  height: 50px;
-  width: 100%;
-  font-weight: 800;
-  padding-top: 7px;
-  background-color: var(--bg-header);
-}
+// #headerBackground p { // Header text
+//   color: var(--text-light);
+//   font-family: var(--ff-secondary);
+//   font-size: 24px;
+//   padding-left: 24px;
+//   position: fixed;
+//   top: -24px;
+//   height: 50px;
+//   width: 100%;
+//   font-weight: 800;
+//   padding-top: 7px;
+//   background-color: var(--bg-header);
+// }
 
 .product-list-section {
   background-color: var(--bg-section);

@@ -45,7 +45,9 @@ function hideElement() {
 // TODO:
 // Lägg även till texten på headerbakgrunden i productsection.
 // Skapa headerBakground på about-sidan också.
-// Fixa så att products-länken verkligen scrollar dit
+
+// Fixa så att products-länken verkligen scrollar dit.
+// Skapa media queries.
 
 /*
  #headerBackground {

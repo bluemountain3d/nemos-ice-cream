@@ -10,9 +10,9 @@ function hideElement() {
 </script>
 
 <template>
-  <header>
-    <p v-if="showElement">Nemo's Ice Cream</p>
 
+  <header>
+  <!-- <div id="headerBackground"></div>  -->
     <button
       @click="hideElement"
       id="menuButton"
@@ -23,8 +23,11 @@ function hideElement() {
       }"
     ></button>
 
+
+
     <transition name="fade">
       <nav v-if="showElement">
+<p>Nemo's Ice Cream</p>
         <img src="../../../assets/images/nemo-solid.PNG" alt="" id="solidnemo" />
         <img
           src="../../../assets/images/silly-starfish.PNG"
@@ -34,7 +37,7 @@ function hideElement() {
         <div class="navlinks">
           <RouterLink to="/" @click="hideElement">Home</RouterLink>
           <RouterLink to="/about" @click="hideElement">About</RouterLink>
-          <RouterLink to="/" @click="hideElement">Products</RouterLink>
+          <RouterLink to="/#products" @click="hideElement">Products</Routerlink>
         </div>
       </nav>
     </transition>
@@ -42,12 +45,42 @@ function hideElement() {
 </template>
 
 <style scoped lang="scss">
+
+// TODO:
+//
+// Skapa headerBakground på produktsidan istället, så den får rätt z-index?
+
+/*
+ #headerBackground {
+  background-color: var(--bg-header);
+  height: 50px;
+  z-index: -1000;
+  position: absolute;
+  margin-top: 0px;
+  height: 50px;
+  width: 100%;
+} */
+
+button {
+  z-index: 2000;
+  width: 50px;
+  height: 50px;
+  right: 15px;
+  background-color: transparent;
+  background-position: center;
+  background-size: cover;
+  border: 0;
+  transition:
+    background-image 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
+  position: fixed;
+}
 header {
   background-color: transparent;
-  height: 50px;
   position: sticky;
   top: 0;
   z-index: 10;
+  max-width: 100vw;
 }
 
 p {
@@ -57,15 +90,15 @@ p {
   padding-left: 24px;
   position: absolute; // ändra sedan.................................................
   margin-top: 0px;
-  transition:
-    background-image 0.5s ease-in-out,
-    opacity 0.5s ease-in-out;
-  background-color: var(--bg-header);
   height: 50px;
-  width: 100vw;
+  width: 100%;
   font-weight: 800;
   padding-top: 7px;
+  background-color: var(--bg-header);
 }
+
+
+
 
 nav #solidnemo {
   width: 67px;
@@ -87,7 +120,6 @@ nav #sillystarfish {
 .navlinks {
   background-color: var(--bg-main);
   z-index: 9;
-
   flex-direction: column;
   position: absolute;
   column-gap: 10px;
@@ -95,8 +127,9 @@ nav #sillystarfish {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   z-index: -1;
+overflow-x: hidden;
 }
 
 nav a {
@@ -107,20 +140,7 @@ nav a {
   margin: 40px;
 }
 
-button {
-  z-index: 1;
-  width: 50px;
-  height: 50px;
-  right: 15px;
-  background-color: transparent;
-  background-position: center;
-  background-size: cover;
-  border: 0;
-  transition:
-    background-image 0.3s ease-in-out,
-    opacity 0.3s ease-in-out;
-  position: absolute;
-}
+
 
 // __________Fade in / out___________
 .fade-enter-active,

@@ -31,6 +31,8 @@ jobs:
         with:
           fetch-depth: 0
       - uses: pnpm/action-setup@v4
+        with:
+          version: latest
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -41,7 +43,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Build with Vite
-        run: pnpm build
+        run: |
+          pnpm build
+          touch dist/.nojekyll
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -59,3 +63,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+ 

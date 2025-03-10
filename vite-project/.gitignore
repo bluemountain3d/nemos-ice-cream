@@ -7,15 +7,29 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies
 node_modules
-*.css.map
-*.css
+
+# OS/Editor Files
 .DS_Store
+Thumbs.db
+*.tmp
+*.bak
+
+# Build Outputs
 dist
 dist-ssr
 coverage
-*.local
+.vite/
+*.tsbuildinfo
 
+# Environment Files
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Cypress
 /cypress/videos/
 /cypress/screenshots/
 
@@ -29,4 +43,11 @@ coverage
 *.sln
 *.sw?
 
-*.tsbuildinfo
+# Local dev files
+*.local
+.eslintcache
+.prettiercache
+
+# CSS and Maps in src
+/src/**/*.css
+/src/**/*.css.map

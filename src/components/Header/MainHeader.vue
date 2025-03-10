@@ -17,17 +17,17 @@ function hideElement() {
       id="menuButton"
       :style="{
         backgroundImage: showElement
-          ? 'url(../../../assets/images/x.svg)'
-          : 'url(../../../assets/images/BurgerMenuBrown.svg)',
+          ? 'url(./assets/images/x.svg)'
+          : 'url(./assets/images/BurgerMenuBrown.svg)',
       }"
     ></button>
 
     <transition name="fade">
       <nav v-if="showElement">
         <p>Nemo's Ice Cream</p>
-        <img src="../../../assets/images/nemo-solid.PNG" alt="" id="solidnemo" />
+        <img src="../../assets/images/nemo-solid.webp" alt="A white clown-fish" id="solidnemo" />
         <img
-          src="../../../assets/images/silly-starfish.PNG"
+          src="../../assets/images/silly-starfish.webp"
           alt="A white starfish"
           id="sillystarfish"
         />

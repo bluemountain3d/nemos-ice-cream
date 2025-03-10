@@ -1,8 +1,8 @@
 <script setup>
 import nemoIconSolid from '@/assets/bilder/nemo-solid.jpg';
-import { ref, computed } from 'vue';
+import { reactive, computed } from 'vue';
 
-const form = ref({
+const form = reactive({
   name: '',
   email: '',
   phone: '',
@@ -13,7 +13,7 @@ const form = ref({
 const isFormValid = computed(() => checkFormValidity());
 
 function checkFormValidity() {
-  return form.value.name && form.value.email && form.value.subject && form.value.message;
+  return form.name && form.email && form.subject && form.message;
 }
 
 function resetForm() {
@@ -104,7 +104,9 @@ function resetForm() {
   display: grid;
   justify-content: center;
   align-items: start;
-  width: 100%;
+  margin-inline: auto;
+  width: min(100%, 1440px);
+  position: relative;
   height: 100%;
   background-color: var(--bg-section);
   grid-template-columns: auto;
@@ -120,9 +122,7 @@ function resetForm() {
     grid-template-columns: 1fr 1fr;
     padding: 3.375rem 6.438rem;
   }
-  @media screen and (min-width:1440px) {
-    grid-template-columns: repeat(2, minmax(20rem, calc(8vw + 35rem))) ;
-  }
+
 }
 .about_text_container{
   display: grid;
@@ -165,7 +165,7 @@ function resetForm() {
   }
 
   @media screen and (min-width: 1024px) {
-    padding-inline-end: 8vw;
+    padding-inline-end: min(8vw, 1440px * 0.08);
     padding-block-end: 0;
     border-bottom: 0;
     
@@ -179,15 +179,14 @@ function resetForm() {
     position: absolute;
     display: block;
     width: 8.063rem;
-    top: 10%;
-    right: 6%;
+    top: 1%;
+    right: 1%;
   }
 
   @media screen and (min-width: 1024px) {
     width: 10rem;
-
-    right: 1%;
-    top: 4.6%;
+    right: -3rem;
+    top: -2rem;
   }
 }
 
@@ -206,7 +205,8 @@ function resetForm() {
   }
   h2{
     @media screen and (min-width: 1024px) {
-    padding-inline-start: 8vw;
+      padding-inline-start: min(8vw, 1440px * 0.08);
+      margin-inline: auto;
   }
   }
   
@@ -218,7 +218,7 @@ form {
   row-gap: 1.375rem;
 
   @media screen and (min-width: 1024px) {
-    padding-inline-start: 8vw;
+    padding-inline-start: min(8vw, 1440px * 0.08);
     border-left: 1px solid var(--text-primary);
   }
 
@@ -227,7 +227,7 @@ form {
   }
   input {
     width: 100%;
-    padding: 1em;
+    padding: 0.4167em;
     border: 1px solid var(--text-primary);
     line-height: 1;
     

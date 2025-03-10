@@ -11,7 +11,6 @@ function hideElement() {
 
 <template>
   <header>
-    <!-- <div id="headerBackground"></div>  -->
     <button
       @click="hideElement"
       id="menuButton"
@@ -21,7 +20,6 @@ function hideElement() {
           : 'url(./assets/images/BurgerMenuBrown.svg)',
       }"
     ></button>
-
     <transition name="fade">
       <nav v-if="showElement">
         <p>Nemo's Ice Cream</p>
@@ -49,19 +47,9 @@ function hideElement() {
 // Fixa så att products-länken verkligen scrollar dit.
 // Skapa media queries.
 
-/*
- #headerBackground {
-  background-color: var(--bg-header);
-  height: 50px;
-  z-index: -1000;
-  position: absolute;
-  margin-top: 0px;
-  height: 50px;
-  width: 100%;
-} */
 
 button {
-  z-index: 2000;
+  z-index: 2;
   width: 50px;
   height: 50px;
   right: 15px;

@@ -3,6 +3,7 @@ import ProductsList from '@/components/Products/ProductsList.vue';
 </script>
 
 <template>
+
   <div id="headerBackground">
     <p>Nemo's Ice Cream</p>
   </div>
@@ -23,10 +24,10 @@ import ProductsList from '@/components/Products/ProductsList.vue';
   height: 50px;
   width: 100%;
   position: sticky;
-  top: 0;
+  margin-bottom: 80px; // - Tillfälligt, ändra till rätt marginal sedan -
 }
 
-p { // Header text
+#headerBackground p { // Header text
   color: var(--text-light);
   font-family: var(--ff-secondary);
   font-size: 24px;

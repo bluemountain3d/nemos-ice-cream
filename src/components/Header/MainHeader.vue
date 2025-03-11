@@ -2,10 +2,16 @@
   <header class="header">
     <div class="header__inner">
       <p class="header__brand">Nemos' Ice Cream</p>
-      <button class="header__menu-toggle" @click="toggleMenu" aria-label="Toggle menu">
-        <img :src="isMenuOpen ? closeMenuIcon : openMenuIcon" alt="Menu icon" />
+      <button
+        class="header__menu-toggle"
+        @click="toggleMenu"
+        aria-label="Toggle menu"
+        :aria-expanded="isMenuOpen"
+        aria-controls="main-navigation"
+      >
+        <img :src="isMenuOpen ? closeMenuIcon : openMenuIcon" alt="" aria-hidden="true" />
       </button>
-      <nav class="header__nav" :class="{ 'header__nav--open': isMenuOpen }">
+      <nav id="main-navigation" class="header__nav" :class="{ 'header__nav--open': isMenuOpen }">
         <ul class="header__menu">
           <li class="header__menu-item">
             <RouterLink to="/" class="header__menu-link" @click="toggleMenu"> Home </RouterLink>
@@ -20,16 +26,8 @@
               Products
             </RouterLink>
           </li>
-          <img
-            class="header__fish-image"
-            :src="nemoSolid"
-            alt="handdrawn outline image of an clownfish"
-          />
-          <img
-            class="header__starfish-image"
-            :src="sillyStarfish"
-            alt="handdrawn outline image of an starfish"
-          />
+          <img class="header__fish-image" :src="nemoSolid" alt="" aria-hidden="true" />
+          <img class="header__starfish-image" :src="sillyStarfish" alt="" aria-hidden="true" />
         </ul>
       </nav>
     </div>
@@ -38,7 +36,7 @@
 
 <script setup>
 // Javascript here
-import { ref } from 'vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 import openMenuIcon from '@/assets/images/BurgerMenuWhite.svg';
 import closeMenuIcon from '@/assets/images/x.svg';
 import nemoSolid from '@/assets/images/nemo-solid.webp';
@@ -48,6 +46,41 @@ const isMenuOpen = ref(false);
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
+
+  // If menu is opened, trap focus inside
+  if (isMenuOpen.value) {
+    document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+  } else {
+    document.body.style.overflow = ''; // Restore scrolling when menu is closed
+  }
+
+  // Close menu on escape key
+  const handleKeyDown = (event) => {
+    if (event.key === 'Escape' && isMenuOpen.value) {
+      toggleMenu();
+    }
+  };
+
+  // Close menu when clicking outside
+  const handleClickOutside = (event) => {
+    const nav = document.getElementById('main-navigation');
+    const menuToggle = document.querySelector('.header__menu-toggle');
+
+    if (isMenuOpen.value && nav && !nav.contains(event.target) && event.target !== menuToggle) {
+      toggleMenu();
+    }
+  };
+
+  // Event listeners for keyboard accessibility
+  onMounted(() => {
+    document.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('click', handleClickOutside);
+  });
+
+  onBeforeUnmount(() => {
+    document.removeEventListener('keydown', handleKeyDown);
+    document.removeEventListener('click', handleClickOutside);
+  });
 };
 </script>
 
@@ -77,6 +110,18 @@ const toggleMenu = () => {
     line-height: 1;
     margin: 0;
     color: var(--text-light);
+    text-decoration: none;
+    padding: 0.5rem 0;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+
+    &:focus {
+      outline: 2px solid var(--text-link);
+      outline-offset: 2px;
+    }
 
     @media screen and (min-width: 720px) {
       font-size: var(--fs-400);
@@ -91,6 +136,11 @@ const toggleMenu = () => {
     height: 4.6875rem;
     display: grid;
     place-content: center;
+
+    &:focus {
+      outline: 2px solid var(--text-light);
+      outline-offset: 2px;
+    }
 
     & * {
       pointer-events: none;
@@ -176,7 +226,6 @@ const toggleMenu = () => {
   }
 
   &__menu-link {
-    // RouterLink
     display: block;
     width: 100%;
     text-align: center;
@@ -189,12 +238,23 @@ const toggleMenu = () => {
 
     &:hover {
       cursor: pointer;
-      opacity: 0.5;
+      opacity: 0.7;
+      //text-decoration: underline;
+    }
+
+    &:focus {
+      outline: 2px solid var(--text-light);
+      outline-offset: 2px;
+      opacity: 0.7;
     }
 
     @media screen and (min-width: 720px) {
       font-size: 4.375rem;
     }
   }
+}
+
+:focus-visible {
+  opacity: 0.7;
 }
 </style>

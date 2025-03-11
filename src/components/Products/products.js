@@ -1,10 +1,19 @@
 import { ref } from 'vue';
 
+
+import peachsFavorite from '@/assets/images/peachs-favorite-icecream.webp';
+import dorisDelight from '@/assets/images/doris-delight-icecream.webp';
+import nemosScoop from '@/assets/images/nemos-scoop-icecream.webp';
+import marlinsCinnamon from '@/assets/images/marlins-cinnamon-icecream.webp';
+import gillsSeaSaltToffee from '@/assets/images/gills-sea-salt-toffee-icecream.webp';
+import jawsomeBruce from '@/assets/images/jawsome-bruce-icecream.webp';
+
+
 const products = ref([
   {
     id: 1,
     img: {
-      src: '/assets/images/product-ice-cream-pics/peachs-favorite-icecream.png',
+      src: peachsFavorite,
       alt: 'Peach\'s Favorite Ice Cream',
       loading: 'lazy',
       width: 3024,
@@ -16,7 +25,7 @@ const products = ref([
   {
     id: 2,
     img: {
-      src: '/assets/images/product-ice-cream-pics/doris-delight-icecream.png',
+      src: dorisDelight,
       alt: 'Doris Delight Ice Cream',
       loading: 'lazy',
       width: 4963,
@@ -28,7 +37,7 @@ const products = ref([
   {
     id: 3,
     img: {
-      src: '/assets/images/product-ice-cream-pics/nemos-scoop-icecream.png',
+      src: nemosScoop,
       alt: 'Nemo\'s Scoop Ice Cream',
       loading: 'lazy',
       width: 3456,
@@ -40,7 +49,7 @@ const products = ref([
   {
     id: 4,
     img: {
-      src: '/assets/images/product-ice-cream-pics/marlins-cinnamon-icecream.png',
+      src: marlinsCinnamon,
       alt: 'Marlin\'s Cinnamon Ice Cream',
       loading: 'lazy',
       width: 3350,
@@ -52,7 +61,7 @@ const products = ref([
   {
     id: 5,
     img: {
-      src: '/assets/images/product-ice-cream-pics/gills-sea-salt-toffee-icecream.png',
+      src: gillsSeaSaltToffee,
       alt: 'Gill\'s Sea Salt toffee Ice Cream',
       loading: 'lazy',
       width: 2500,
@@ -64,7 +73,7 @@ const products = ref([
   {
     id: 6,
     img: {
-      src: '/assets/images/product-ice-cream-pics/jawsome-bruce-icecream.png',
+      src:  jawsomeBruce,
       alt: 'Jawsome Bruce Ice Cream',
       loading: 'lazy',
       width: 3024,
@@ -74,5 +83,6 @@ const products = ref([
     flavor: 'Rasberry',
   },
 ]);
+
 
 export default products;

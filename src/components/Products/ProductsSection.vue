@@ -3,7 +3,10 @@ import ProductsList from '@/components/Products/ProductsList.vue';
 </script>
 
 <template>
-  <div id="headerBackground"></div>
+
+  <!-- <div id="headerBackground">
+    <p>Nemo's Ice Cream</p>
+  </div> -->
   <section class="page-section" id="products">
     <section class="product-list-section">
       <h2>Our flavors</h2>
@@ -16,15 +19,32 @@ import ProductsList from '@/components/Products/ProductsList.vue';
 
 <style scoped lang="scss">
 
-#headerBackground {
-  background-color: var(--bg-header);
-  height: 50px;
-  width: 100%;
-  position: sticky;
-  top: 0;
-}
+// #headerBackground {
+//   background-color: var(--bg-header);
+//   height: 50px;
+//   width: 100%;
+//   position: sticky;
+//   margin-bottom: 30px; // - Tillfälligt, ändra till rätt marginal sedan -
+// }
 
-.product-list-section {
+// #headerBackground p { // Header text
+//   color: var(--text-light);
+//   font-family: var(--ff-secondary);
+//   font-size: 24px;
+//   padding-left: 24px;
+//   position: fixed;
+//   top: -24px;
+//   height: 50px;
+//   width: 100%;
+//   font-weight: 800;
+//   padding-top: 7px;
+//   background-color: var(--bg-header);
+// }
+
+.page-section {
+  padding-top: 15vw;
+
+  .product-list-section {
   background-color: var(--bg-section);
   color: var(--text-primary);
   height: 100%;
@@ -34,6 +54,7 @@ import ProductsList from '@/components/Products/ProductsList.vue';
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  background-image: url('@/assets/images/fish-background.webp');
 
   h2 {
     margin-top: 16px;
@@ -60,7 +81,6 @@ import ProductsList from '@/components/Products/ProductsList.vue';
 
 @media screen and (min-width: 1024px) {
   .product-list-section {
-    background-image: url('/assets/images/Fish-background.png');
 
     div {
       display: grid;
@@ -68,6 +88,7 @@ import ProductsList from '@/components/Products/ProductsList.vue';
       justify-items: center;
     }
   }
+}
 }
 
 

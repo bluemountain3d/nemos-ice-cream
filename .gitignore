@@ -10,6 +10,7 @@ lerna-debug.log*
 node_modules
 *.css.map
 *.css
+*.bak
 .DS_Store
 dist
 dist-ssr

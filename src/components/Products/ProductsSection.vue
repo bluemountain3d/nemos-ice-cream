@@ -41,7 +41,10 @@ import ProductsList from '@/components/Products/ProductsList.vue';
 //   background-color: var(--bg-header);
 // }
 
-.product-list-section {
+.page-section {
+  padding-top: 15vw;
+
+  .product-list-section {
   background-color: var(--bg-section);
   color: var(--text-primary);
   height: 100%;
@@ -51,6 +54,7 @@ import ProductsList from '@/components/Products/ProductsList.vue';
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  background-image: url('@/assets/images/fish-background.webp');
 
   h2 {
     margin-top: 16px;
@@ -77,7 +81,6 @@ import ProductsList from '@/components/Products/ProductsList.vue';
 
 @media screen and (min-width: 1024px) {
   .product-list-section {
-    background-image: url('/assets/images/Fish-background.png');
 
     div {
       display: grid;
@@ -85,6 +88,7 @@ import ProductsList from '@/components/Products/ProductsList.vue';
       justify-items: center;
     }
   }
+}
 }
 
 

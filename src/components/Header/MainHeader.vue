@@ -11,6 +11,7 @@ function hideElement() {
 
 <template>
   <header>
+      <p>Nemo's Ice Cream</p>
     <button
       @click="hideElement"
       id="menuButton"
@@ -20,9 +21,7 @@ function hideElement() {
           : 'url(./assets/images/BurgerMenuBrown.svg)',
       }"
     ></button>
-    <transition name="fade">
       <nav v-if="showElement">
-        <p>Nemo's Ice Cream</p>
         <img src="../../assets/images/nemo-solid.webp" alt="A white clown-fish" id="solidnemo" />
         <img
           src="../../assets/images/silly-starfish.webp"
@@ -35,32 +34,15 @@ function hideElement() {
           <RouterLink to="/#products" @click="hideElement">Products</RouterLink>
         </div>
       </nav>
-    </transition>
   </header>
 </template>
 
 <style scoped lang="scss">
 // TODO:
 
+// ----> pixelvärdet / 16 använd REM
 // Skapa media queries.
-// Om tid finns: kolla på headerbakgrunds-fix
-
-
-button {
-  z-index: 2;
-  width: 50px;
-  height: 50px;
-  right: 15px;
-  background-color: transparent;
-  background-position: center;
-  background-size: cover;
-  border: 0;
-  transition:
-    background-image 0.3s ease-in-out,
-    opacity 0.3s ease-in-out;
-  position: fixed;
-}
-
+// Om tid finns: kolla på headerbakgrunds-fix.
 header {
   background-color: transparent;
   position: sticky;
@@ -81,6 +63,21 @@ p {
   font-weight: 800;
   padding-top: 7px;
   background-color: var(--bg-header);
+}
+
+button {
+  z-index: 2;
+  width: 50px;
+  height: 50px;
+  right: 15px;
+  background-color: transparent;
+  background-position: center;
+  background-size: cover;
+  border: 0;
+  transition:
+    background-image 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
+  position: fixed;
 }
 
 nav #solidnemo {

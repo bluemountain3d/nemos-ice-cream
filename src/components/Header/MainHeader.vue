@@ -11,7 +11,8 @@
       >
         <img :src="isMenuOpen ? closeMenuIcon : openMenuIcon" alt="" aria-hidden="true" />
       </button>
-      <nav id="main-navigation" class="header__nav" :class="{ 'header__nav--open': isMenuOpen }">
+      <Transition name="fade">
+      <nav v-if="isMenuOpen" id="main-navigation" class="header__nav" :class="{ 'header__nav--open': isMenuOpen }">
         <ul class="header__menu">
           <li class="header__menu-item">
             <RouterLink to="/" class="header__menu-link" @click="toggleMenu"> Home </RouterLink>
@@ -30,6 +31,7 @@
           <img class="header__starfish-image" :src="sillyStarfish" alt="" aria-hidden="true" />
         </ul>
       </nav>
+      </Transition>
     </div>
   </header>
 </template>
@@ -247,5 +249,14 @@ onBeforeUnmount(() => {
 
 :focus-visible {
   opacity: 0.7;
+}
+
+// Add fade transition styles
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
 }
 </style>

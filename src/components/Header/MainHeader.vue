@@ -10,71 +10,39 @@ function hideElement() {
 </script>
 
 <template>
-
   <header>
-  <!-- <div id="headerBackground"></div>  -->
+      <p>Nemo's Ice Cream</p>
     <button
       @click="hideElement"
       id="menuButton"
       :style="{
         backgroundImage: showElement
-          ? 'url(../../../assets/images/x.svg)'
-          : 'url(../../../assets/images/BurgerMenuBrown.svg)',
+          ? 'url(./assets/images/x.svg)'
+          : 'url(./assets/images/BurgerMenuBrown.svg)',
       }"
     ></button>
-
-
-
-    <transition name="fade">
       <nav v-if="showElement">
-<p>Nemo's Ice Cream</p>
-        <img src="../../../assets/images/nemo-solid.PNG" alt="" id="solidnemo" />
+        <img src="../../assets/images/nemo-solid.webp" alt="A white clown-fish" id="solidnemo" />
         <img
-          src="../../../assets/images/silly-starfish.PNG"
+          src="../../assets/images/silly-starfish.webp"
           alt="A white starfish"
           id="sillystarfish"
         />
         <div class="navlinks">
           <RouterLink to="/" @click="hideElement">Home</RouterLink>
           <RouterLink to="/about" @click="hideElement">About</RouterLink>
-          <RouterLink to="/#products" @click="hideElement">Products</Routerlink>
+          <RouterLink to="/#products" @click="hideElement">Products</RouterLink>
         </div>
       </nav>
-    </transition>
   </header>
 </template>
 
 <style scoped lang="scss">
-
 // TODO:
-//
-// Skapa headerBakground på produktsidan istället, så den får rätt z-index?
 
-/*
- #headerBackground {
-  background-color: var(--bg-header);
-  height: 50px;
-  z-index: -1000;
-  position: absolute;
-  margin-top: 0px;
-  height: 50px;
-  width: 100%;
-} */
-
-button {
-  z-index: 2000;
-  width: 50px;
-  height: 50px;
-  right: 15px;
-  background-color: transparent;
-  background-position: center;
-  background-size: cover;
-  border: 0;
-  transition:
-    background-image 0.3s ease-in-out,
-    opacity 0.3s ease-in-out;
-  position: fixed;
-}
+// ----> pixelvärdet / 16 använd REM
+// Skapa media queries.
+// Om tid finns: kolla på headerbakgrunds-fix.
 header {
   background-color: transparent;
   position: sticky;
@@ -88,8 +56,8 @@ p {
   font-family: var(--ff-secondary);
   font-size: 24px;
   padding-left: 24px;
-  position: absolute; // ändra sedan.................................................
-  margin-top: 0px;
+  position: fixed;
+  top: -24px;
   height: 50px;
   width: 100%;
   font-weight: 800;
@@ -97,8 +65,20 @@ p {
   background-color: var(--bg-header);
 }
 
-
-
+button {
+  z-index: 2;
+  width: 50px;
+  height: 50px;
+  right: 15px;
+  background-color: transparent;
+  background-position: center;
+  background-size: cover;
+  border: 0;
+  transition:
+    background-image 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
+  position: fixed;
+}
 
 nav #solidnemo {
   width: 67px;
@@ -129,7 +109,7 @@ nav #sillystarfish {
   height: 100vh;
   width: 100%;
   z-index: -1;
-overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 nav a {
@@ -140,9 +120,7 @@ nav a {
   margin: 40px;
 }
 
-
-
-// __________Fade in / out___________
+// Fade in / out elements
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s ease;

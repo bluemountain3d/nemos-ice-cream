@@ -1,5 +1,5 @@
 <script setup>
-import nemoIconSolid from '@/assets/bilder/nemo-solid.jpg';
+import nemoIconSolid from '@/assets/images/nemo-solid.webp';
 import { reactive, computed } from 'vue';
 
 const form = reactive({
@@ -22,11 +22,16 @@ function resetForm() {
 </script>
 
 <template>
+
+  <!-- <div id="headerBackground">
+    <p>Nemo's Ice Cream</p>
+  </div> -->
+
   <section class="page-section">
     <section class=" page_container">
       <div class="about__text_container">
         <article class="about_text">
-          <h1 class="heading-1 about_title">about us</h1>
+          <h1 class="about_title">about us</h1>
           <p>
             At Nemo’s Ice Cream, we believe that every scoop should be an adventure! Inspired by the
             wonders of the ocean, we craft artisanal ice cream that blends bold flavors with stunning,
@@ -46,15 +51,15 @@ function resetForm() {
         </article>
       </div>
       <div>
-        <img class="nemo_icon_Solid" :src="nemoIconSolid" alt="nemo" />
+        <img class="nemo_icon_solid" :src="nemoIconSolid" alt="nemo" />
         <div class="form_container">
-          <h2 class="heading-1 about_title">contact</h2>
+          <h2 class="about_title">contact</h2>
           <form id="contact_formula">
             <div class="input_group">
               <label for="name">Name*</label>
               <input type="text" id="name" v-model="form.name" required />
             </div>
-            
+
             <div class="input_group">
               <label for="email">Email*</label>
               <input type="email" id="email" v-model="form.email" required />
@@ -99,6 +104,29 @@ function resetForm() {
 </template>
 
 <style scoped lang="scss">
+
+// #headerBackground {
+//   background-color: var(--bg-header);
+//   height: 50px;
+//   width: 100%;
+//   position: sticky;
+//   z-index: 2;
+// }
+
+// #headerBackground p { // Header text
+//   color: var(--text-light);
+//   font-family: var(--ff-secondary);
+//   font-size: 24px;
+//   padding-left: 24px;
+//   position: fixed;
+//   top: -24px;
+//   height: 50px;
+//   width: 100%;
+//   font-weight: 800;
+//   padding-top: 7px;
+//   background-color: var(--bg-header);
+// }
+
 //----------------PAGE SECTION----------------
 .page_container {
   display: grid;
@@ -112,6 +140,7 @@ function resetForm() {
   grid-template-columns: auto;
   row-gap: 1.3vh;
   padding: 1.6875rem 1rem;
+  z-index: 1;
 
   @media screen and (min-width: 768px) {
     grid-template-columns: auto;
@@ -126,10 +155,11 @@ function resetForm() {
 }
 .about_text_container{
   display: grid;
-  
+
 }
 //----------------TITLE----------------
 .about_title {
+  font-family: var(--ff-primary);
   margin: 0;
   text-align: center;
   font-size: 2.5rem;
@@ -150,7 +180,7 @@ function resetForm() {
   max-width: 70ch;
   padding-block-end: 2.4375rem;
   border-bottom: 1px solid var(--bg-footer);
-  
+
   & > p {
     margin: 0;
   }
@@ -161,18 +191,18 @@ function resetForm() {
 
   @media screen and (min-width: 768px) {
     padding-block-end: 4.5rem;
-    
+
   }
 
   @media screen and (min-width: 1024px) {
     padding-inline-end: min(8vw, 1440px * 0.08);
     padding-block-end: 0;
     border-bottom: 0;
-    
+
   }
 }
 //----------------IMAGE---------------
-.nemo_icon_Solid {
+.nemo_icon_solid {
   display: none;
 
   @media screen and (min-width: 768px) {
@@ -209,7 +239,7 @@ function resetForm() {
       margin-inline: auto;
   }
   }
-  
+
 }
 form {
   width: 100%;
@@ -230,7 +260,7 @@ form {
     padding: 0.4167em;
     border: 1px solid var(--text-primary);
     line-height: 1;
-    
+
   }
   .input_group {
     display: flex;
@@ -245,9 +275,9 @@ form {
     }
   }
 
-  
+
   textarea {
-    width: 100%; 
+    width: 100%;
     height: auto;
     min-height: 12.5rem;
     border: 1px solid var(--text-primary);
@@ -263,7 +293,7 @@ form {
   justify-content: flex-end;
   width: 100%;
   margin-block-start: 2rem;
-  
+
   @media screen and (min-width: 720px) {
     margin-block-start: 2.25rem;
   }

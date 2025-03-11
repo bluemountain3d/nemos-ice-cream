@@ -5,26 +5,27 @@ import iceCreamFishLg from '@/assets/images/ice-cream-fish-w880.webp';
 </script>
 
 <template>
-  <section class="hero">
+  <section class="hero" aria-labelledby="hero-heading">
     <picture class="hero__image">
       <source media="(max-width: 540px)" :srcset="iceCreamFishSm" type="image/webp" />
       <source media="(max-width: 960px)" :srcset="iceCreamFishMd" type="image/webp" />
       <img
         :src="iceCreamFishLg"
-        alt="en hand som håller i en glassstrut med vaniljglasskulor i sams en tecknat clownfisk silhuett över "
+        alt="en hand som håller i en glassstrut med vaniljglasskulor i sams en tecknat clownfisk silhuett över"
+        loading="eager"
       />
     </picture>
     <div class="hero__content">
       <div class="hero__title">
-        <h1 class="hero__heading">nemo</h1>
+        <h1 id="hero-heading" class="hero__heading">nemo</h1>
         <h2 class="hero__byline heading-3">Just keep scoopoing</h2>
       </div>
       <div class="hero__cta">
-        <p class="hero__cta-text">Check out or new and<br />yummy flavours!</p>
-        <button class="primary-btn">Click here</button>
+        <p class="hero__cta-text">Check out our new and<br />yummy flavours!</p>
+        <button class="primary-btn" aria-label="View new ice cream flavors">Click here</button>
       </div>
     </div>
-    <div class="hero__wave-container">
+    <div class="hero__wave-container" aria-hidden="true">
       <svg viewBox="0 0 1440 617" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           id="wave-brown"
@@ -43,7 +44,7 @@ import iceCreamFishLg from '@/assets/images/ice-cream-fish-w880.webp';
         />
       </svg>
     </div>
-    <a href="#products" class="hero__go-down">
+    <a href="#products" class="hero__go-down" aria-label="Scroll down to products section">
       <svg class="hero__go-down-svg" viewBox="0 0 104 68" xmlns="http://www.w3.org/2000/svg">
         <path
           class="hero__go-down-path"
@@ -162,6 +163,11 @@ import iceCreamFishLg from '@/assets/images/ice-cream-fish-w880.webp';
     translate: -50% 0;
     transition: translate 0.5s ease-out;
 
+    &:focus {
+      outline: 3px solid var(--text-link);
+      outline-offset: 3px;
+    }
+
     &-svg {
       display: block;
       width: 13vmin;
@@ -174,11 +180,13 @@ import iceCreamFishLg from '@/assets/images/ice-cream-fish-w880.webp';
       transition: fill 0.25s ease;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       translate: -50% 25%;
     }
 
-    &:hover &-path {
+    &:hover &-path,
+    &:focus &-path {
       fill: var(--text-link);
     }
   }

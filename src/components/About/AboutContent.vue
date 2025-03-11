@@ -128,6 +128,12 @@ function resetForm() {
 // }
 
 //----------------PAGE SECTION----------------
+.page-section {
+  padding-top: 5.4375rem;
+  @media screen and (min-width: 1024px) {
+    padding-top: 6.375rem;
+  }
+}
 .page_container {
   display: grid;
   justify-content: center;
@@ -224,23 +230,30 @@ function resetForm() {
 .form_container {
   display: grid;
   width: 100%;
+  max-width: 31.25rem;
   margin-top: 2rem;
+  margin-inline: auto;
 
   @media screen and (min-width: 768px) {
+    
     margin-top: 2.625rem;
   }
 
   @media screen and (min-width: 1024px) {
     margin-top: 0;
+    max-width: fit-content;
+    margin-inline: 0;
   }
   h2{
+    margin-inline: auto;
     @media screen and (min-width: 1024px) {
       padding-inline-start: min(8vw, 1440px * 0.08);
-      margin-inline: auto;
+      
   }
   }
 
 }
+
 form {
   width: 100%;
   font-size: var(--label-text);

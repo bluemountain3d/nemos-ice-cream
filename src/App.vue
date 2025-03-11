@@ -9,5 +9,3 @@ import MainFooter from '@/components/MainFooter/MainFooter.vue';
   <RouterView />
   <MainFooter />
 </template>
-
-<style scoped lang="scss"></style>

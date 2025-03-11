@@ -2,7 +2,6 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
 
 const router = createRouter({
-
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
@@ -19,9 +18,17 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue'),
     },
   ],
-  scrollBehavior(to, from, savedPosition) {
-    // returns scroll position to the top
-    return { top: 0 }
+  scrollBehavior(to) {
+    // scrolls to an element with id
+    if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: 'smooth',
+      };
+    } else {
+      // returns scroll position to the top
+      return { top: 0, behavior: 'smooth' };
+    }
   },
 });
 

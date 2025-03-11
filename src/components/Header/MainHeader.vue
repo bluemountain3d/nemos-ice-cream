@@ -35,7 +35,14 @@
 </template>
 
 <script setup>
-// Javascript here
+
+// TODO:
+
+// fixa nav-width
+// ----> pixelvärdet / 16 använd REM
+// Skapa/fixa media queries.
+// gör cookie-bar!!!!!!
+
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 import openMenuIcon from '@/assets/images/BurgerMenuWhite.svg';
 import closeMenuIcon from '@/assets/images/x.svg';
@@ -44,44 +51,28 @@ import sillyStarfish from '@/assets/images/silly-starfish.webp';
 
 const isMenuOpen = ref(false);
 
+// Toggles the navigation-menu
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
-
-  // If menu is opened, trap focus inside
-  if (isMenuOpen.value) {
-    document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
-  } else {
-    document.body.style.overflow = ''; // Restore scrolling when menu is closed
-  }
-
-  // Close menu on escape key
-  const handleKeyDown = (event) => {
-    if (event.key === 'Escape' && isMenuOpen.value) {
-      toggleMenu();
-    }
-  };
-
-  // Close menu when clicking outside
-  const handleClickOutside = (event) => {
-    const nav = document.getElementById('main-navigation');
-    const menuToggle = document.querySelector('.header__menu-toggle');
-
-    if (isMenuOpen.value && nav && !nav.contains(event.target) && event.target !== menuToggle) {
-      toggleMenu();
-    }
-  };
-
-  // Event listeners for keyboard accessibility
-  onMounted(() => {
-    document.addEventListener('keydown', handleKeyDown);
-    document.addEventListener('click', handleClickOutside);
-  });
-
-  onBeforeUnmount(() => {
-    document.removeEventListener('keydown', handleKeyDown);
-    document.removeEventListener('click', handleClickOutside);
-  });
 };
+
+// Close menu on Escape key
+const handleKeyDown = (event) => {
+  if (event.key === 'Escape' && isMenuOpen.value) {
+     toggleMenu();
+  }
+};
+
+// Add event listeners when the component is mounted
+onMounted(() => {
+  document.addEventListener('keydown', handleKeyDown);
+});
+
+// Remove event listeners when the component is unmounted
+onBeforeUnmount(() => {
+  document.removeEventListener('keydown', handleKeyDown);
+});
+
 </script>
 
 <style scoped lang="scss">

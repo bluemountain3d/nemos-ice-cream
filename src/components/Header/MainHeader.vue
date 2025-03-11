@@ -1,17 +1,22 @@
 <template>
   <header class="header" id="header">
-      <RouterLink to="/" class="header__brand">Nemos' Ice Cream</RouterLink>
-      <button
-        class="header__menu-toggle"
-        @click="toggleMenu"
-        aria-label="Toggle menu"
-        :aria-expanded="isMenuOpen"
-        aria-controls="main-navigation"
+    <RouterLink to="/" class="header__brand">Nemos' Ice Cream</RouterLink>
+    <button
+      class="header__menu-toggle"
+      @click="toggleMenu"
+      aria-label="Toggle menu"
+      :aria-expanded="isMenuOpen"
+      aria-controls="main-navigation"
+    >
+      <img :src="isMenuOpen ? closeMenuIcon : openMenuIcon" alt="" aria-hidden="true" />
+    </button>
+    <Transition name="fade">
+      <nav
+        v-if="isMenuOpen"
+        id="main-navigation"
+        class="header__nav"
+        :class="{ 'header__nav--open': isMenuOpen }"
       >
-        <img :src="isMenuOpen ? closeMenuIcon : openMenuIcon" alt="" aria-hidden="true" />
-      </button>
-      <Transition name="fade">
-      <nav v-if="isMenuOpen" id="main-navigation" class="header__nav" :class="{ 'header__nav--open': isMenuOpen }">
         <ul class="header__menu">
           <li class="header__menu-item">
             <RouterLink to="/" class="header__menu-link" @click="toggleMenu"> Home </RouterLink>
@@ -30,17 +35,14 @@
           <img class="header__starfish-image" :src="sillyStarfish" alt="" aria-hidden="true" />
         </ul>
       </nav>
-      </Transition>
+    </Transition>
   </header>
 </template>
 
 <script setup>
-
 // TODO:
 
 // fixa nav-width???
-// ----> pixelvärdet / 16 använd REM
-// Skapa/fixa media queries.
 // gör cookie-bar!!!!!!
 
 // Fråga om:
@@ -63,7 +65,7 @@ const toggleMenu = () => {
 // Close menu on Escape key
 const handleKeyDown = (event) => {
   if (event.key === 'Escape' && isMenuOpen.value) {
-     toggleMenu();
+    toggleMenu();
   }
 };
 
@@ -76,7 +78,6 @@ onMounted(() => {
 onBeforeUnmount(() => {
   document.removeEventListener('keydown', handleKeyDown);
 });
-
 </script>
 
 <style scoped lang="scss">
@@ -108,7 +109,6 @@ onBeforeUnmount(() => {
       text-decoration: underline;
     }
 
-    // behövs bara emn storlek, ssmma i desktop
     @media screen and (min-width: 720px) {
       font-size: var(--fs-400);
       left: 1.5rem;
@@ -134,7 +134,7 @@ onBeforeUnmount(() => {
       pointer-events: none;
     }
 
-    // för knappen
+    // For the button
     @media screen and (min-width: 720px) {
       width: 3.75rem;
       height: 3.75rem;
@@ -149,13 +149,13 @@ onBeforeUnmount(() => {
   }
 
   // For the header
-@media screen and (min-width: 720px) {
-      height: 3.75rem;
-    }
+  @media screen and (min-width: 720px) {
+    height: 3.75rem;
+  }
 
-@media screen and (min-width: 1024px) {
-     height: 4.688rem;
-    }
+  @media screen and (min-width: 1024px) {
+    height: 4.688rem;
+  }
 
   &__nav {
     display: none;
@@ -181,7 +181,7 @@ onBeforeUnmount(() => {
   }
 
   &__fish-image {
-    top: 0;
+    top: 6vh;
     left: 0;
     width: 16.41vw;
     transform: scaleX(-1);
@@ -197,9 +197,10 @@ onBeforeUnmount(() => {
   }
 
   &__starfish-image {
-    bottom: 0;
+    bottom: 1vh;
     right: 0;
     width: 15.38vw;
+
     @media screen and (min-width: 720px) {
       width: 20.74vw;
       bottom: 22vh;
@@ -239,12 +240,12 @@ onBeforeUnmount(() => {
     display: block;
     width: 100%;
     text-align: center;
-    font-size: 3.5rem;
+    font-size: 4.375rem;
     font-family: var(--ff-primary);
     text-decoration: none;
     color: var(--text-primary);
     filter: drop-shadow(0 0.25rem 0.125rem rgba(0, 0, 0, 0.25));
-    padding-block: 0.5em;
+    padding-block: 0.4em;
 
     &:hover {
       cursor: pointer;
@@ -257,10 +258,6 @@ onBeforeUnmount(() => {
       outline-offset: 2px;
       opacity: 0.7;
     }
-
-    @media screen and (min-width: 720px) {
-      font-size: 4.375rem;
-    }
   }
 }
 
@@ -268,12 +265,14 @@ onBeforeUnmount(() => {
   opacity: 0.7;
 }
 
-// Add fade transition styles
-.fade-enter-active, .fade-leave-active {
+// Fade transition styles
+.fade-enter-active,
+.fade-leave-active {
   transition: opacity 0.3s ease-in-out;
 }
 
-.fade-enter-from, .fade-leave-to {
+.fade-enter-from,
+.fade-leave-to {
   opacity: 0;
 }
 </style>

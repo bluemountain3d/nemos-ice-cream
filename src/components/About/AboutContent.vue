@@ -1,5 +1,5 @@
 <script setup>
-import nemoIconSolid from '@/assets/bilder/nemo-solid.jpg';
+import nemoIconSolid from '@/assets/images/nemo-solid.webp';
 import { reactive, computed } from 'vue';
 
 const form = reactive({
@@ -46,7 +46,7 @@ function resetForm() {
         </article>
       </div>
       <div>
-        <img class="nemo_icon_Solid" :src="nemoIconSolid" alt="nemo" />
+        <img class="nemo_icon_solid" :src="nemoIconSolid" alt="nemo" />
         <div class="form_container">
           <h2 class="heading-1 about_title">contact</h2>
           <form id="contact_formula">
@@ -172,7 +172,7 @@ function resetForm() {
   }
 }
 //----------------IMAGE---------------
-.nemo_icon_Solid {
+.nemo_icon_solid {
   display: none;
 
   @media screen and (min-width: 768px) {

@@ -51,7 +51,7 @@ function resetForm() {
         </article>
       </div>
       <div>
-        <img class="nemo_icon_solid" :src="nemoIconSolid" alt="nemo" />
+        <img class="nemo_icon_solid" :src="nemoIconSolid" alt="bild på en clownfisk" />
         <div class="form_container">
           <h2 class="about_title">contact</h2>
           <form id="contact_formula">

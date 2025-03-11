@@ -26,7 +26,7 @@ function resetForm() {
     <section class=" page_container">
       <div class="about__text_container">
         <article class="about_text">
-          <h1 class="heading-1 about_title">about us</h1>
+          <h1 class="about_title">about us</h1>
           <p>
             At Nemo’s Ice Cream, we believe that every scoop should be an adventure! Inspired by the
             wonders of the ocean, we craft artisanal ice cream that blends bold flavors with stunning,
@@ -48,7 +48,7 @@ function resetForm() {
       <div>
         <img class="nemo_icon_solid" :src="nemoIconSolid" alt="nemo" />
         <div class="form_container">
-          <h2 class="heading-1 about_title">contact</h2>
+          <h2 class="about_title">contact</h2>
           <form id="contact_formula">
             <div class="input_group">
               <label for="name">Name*</label>
@@ -130,6 +130,7 @@ function resetForm() {
 }
 //----------------TITLE----------------
 .about_title {
+  font-family: var(--ff-primary);
   margin: 0;
   text-align: center;
   font-size: 2.5rem;

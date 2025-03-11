@@ -58,6 +58,8 @@ import iceCreamFishLg from '@/assets/images/ice-cream-fish-w880.webp';
   background-size: 157% 100%;
   background-position: center;
 
+  z-index: 2;
+
   @media screen and (min-width: 720px) {
     padding-inline-start: calc(4.8261rem + 4.2904vw);
     background-size: 110% 110%;

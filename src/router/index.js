@@ -18,6 +18,18 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue'),
     },
   ],
+  scrollBehavior(to) {
+    // scrolls to an element with id
+    if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: 'smooth',
+      };
+    } else {
+      // returns scroll position to the top
+      return { top: 0, behavior: 'smooth' };
+    }
+  },
 });
 
 export default router;

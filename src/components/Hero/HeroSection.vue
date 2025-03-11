@@ -43,6 +43,15 @@ import iceCreamFishLg from '@/assets/images/ice-cream-fish-w880.webp';
         />
       </svg>
     </div>
+    <a href="#products" class="hero__go-down">
+      <svg class="hero__go-down-svg" viewBox="0 0 104 68" xmlns="http://www.w3.org/2000/svg">
+        <path
+          class="hero__go-down-path"
+          d="M9.28252 17.528L6.59164 20.4877L9.5515 23.1785L49.5876 59.575L52.2783 62.0211L54.969 59.575L95.0051 23.1785L97.965 20.4877L95.2741 17.528L87.2019 8.64906L84.5111 5.68945L81.5515 8.38011L52.2783 34.9925L23.0052 8.38011L20.0455 5.68945L17.3548 8.64906L9.28252 17.528Z"
+          stroke-width="8"
+        />
+      </svg>
+    </a>
   </section>
 </template>
 
@@ -142,6 +151,36 @@ import iceCreamFishLg from '@/assets/images/ice-cream-fish-w880.webp';
   &__cta-text {
     font-size: var(--fs-300);
     margin: 0 0 0.8125rem;
+  }
+
+  &__go-down {
+    z-index: 99;
+    display: block;
+    position: absolute;
+    bottom: 6vmin;
+    left: 50%;
+    translate: -50% 0;
+    transition: translate 0.5s ease-out;
+
+    &-svg {
+      display: block;
+      width: 13vmin;
+      height: auto;
+    }
+
+    &-path {
+      fill: var(--text-primary);
+      stroke: var(--text-light);
+      transition: fill 0.25s ease;
+    }
+
+    &:hover {
+      translate: -50% 25%;
+    }
+
+    &:hover &-path {
+      fill: var(--text-link);
+    }
   }
 
   &__wave-container {

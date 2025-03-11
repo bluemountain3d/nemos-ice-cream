@@ -1,7 +1,6 @@
 <template>
-  <header class="header">
-    <div class="header__inner">
-      <p class="header__brand">Nemos' Ice Cream</p>
+  <header class="header" id="header">
+      <RouterLink to="/" class="header__brand">Nemos' Ice Cream</RouterLink>
       <button
         class="header__menu-toggle"
         @click="toggleMenu"
@@ -32,7 +31,6 @@
         </ul>
       </nav>
       </Transition>
-    </div>
   </header>
 </template>
 
@@ -40,10 +38,14 @@
 
 // TODO:
 
-// fixa nav-width
+// fixa nav-width???
 // ----> pixelvärdet / 16 använd REM
 // Skapa/fixa media queries.
 // gör cookie-bar!!!!!!
+
+// Fråga om:
+// Border på menyknappen när den klickas på. Ganska fult men behövs
+// det för tillgängligheten?
 
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 import openMenuIcon from '@/assets/images/BurgerMenuWhite.svg';
@@ -83,70 +85,79 @@ onBeforeUnmount(() => {
 .header {
   z-index: 999;
   width: 100%;
+  height: 3.125rem;
   display: block;
   position: fixed;
   top: 0;
   left: 0;
   background-color: var(--bg-header);
 
-  &__inner {
-    width: min(100%, 1440px);
-    margin-inline: auto;
-    padding-inline: 5.7vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
   &__brand {
     font-size: var(--fs-300);
     line-height: 1;
-    margin: 0;
+    padding-left: 14px;
     color: var(--text-light);
     text-decoration: none;
-    padding: 0.5rem 0;
+    display: inline;
+    position: absolute;
+    top: 0.8rem;
+    font-weight: 800;
 
     &:hover,
     &:focus {
       text-decoration: underline;
     }
 
-    &:focus {
-      outline: 2px solid var(--text-link);
-      outline-offset: 2px;
-    }
-
+    // behövs bara emn storlek, ssmma i desktop
     @media screen and (min-width: 720px) {
       font-size: var(--fs-400);
+      left: 1.5rem;
+    }
+
+    @media screen and (min-width: 1024px) {
+      top: 1.3rem;
+      left: 5.125rem;
     }
   }
 
   &__menu-toggle {
+    display: absolute;
     background: none;
     border: none;
     cursor: pointer;
-    width: 4.6875rem;
-    height: 4.6875rem;
-    display: grid;
-    place-content: center;
-
-    &:focus {
-      outline: 2px solid var(--text-light);
-      outline-offset: 2px;
-    }
+    width: 3.125rem;
+    height: 3.125rem;
+    position: absolute;
+    right: 15px;
 
     & * {
       pointer-events: none;
     }
 
-    @media screen and (min-width: 1024px) {
+    // för knappen
+    @media screen and (min-width: 720px) {
       width: 3.75rem;
       height: 3.75rem;
+      right: 1.2rem;
+    }
+
+    @media screen and (min-width: 1024px) {
+      width: 4.688rem;
+      height: 4.688rem;
+      right: 2rem;
     }
   }
 
+  // For the header
+@media screen and (min-width: 720px) {
+      height: 3.75rem;
+    }
+
+@media screen and (min-width: 1024px) {
+     height: 4.688rem;
+    }
+
   &__nav {
-    // nav
     display: none;
     position: absolute;
     top: 100%;
@@ -173,11 +184,15 @@ onBeforeUnmount(() => {
     top: 0;
     left: 0;
     width: 16.41vw;
+    transform: scaleX(-1);
+
     @media screen and (min-width: 720px) {
       width: 22.78vw;
+      top: 22vh;
     }
     @media screen and (min-width: 1024px) {
       width: 18.82vw;
+      top: 5vh;
     }
   }
 
@@ -187,9 +202,11 @@ onBeforeUnmount(() => {
     width: 15.38vw;
     @media screen and (min-width: 720px) {
       width: 20.74vw;
+      bottom: 22vh;
     }
     @media screen and (min-width: 1024px) {
       width: 16.04vw;
+      bottom: 3vh;
     }
   }
 

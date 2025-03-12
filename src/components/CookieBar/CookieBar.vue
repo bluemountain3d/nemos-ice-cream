@@ -9,8 +9,8 @@
         </p>
       </div>
       <div class="buttons">
-        <button @click="declineCookies" class="decline">Decline</button>
-        <button @click="acceptCookies">Accept</button>
+        <button @click="declineCookies" class="decline primary-btn">Decline</button>
+        <button @click="acceptCookies" class="primary-btn">Accept</button>
       </div>
     </div>
   </Transition>
@@ -41,6 +41,7 @@ const declineCookies = () => {
 
 <style scoped lang="scss">
 .cookie-bar {
+  z-index: 99;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -96,15 +97,15 @@ const declineCookies = () => {
   }
 }
 
-.cookie-bar button {
-  background: var(--bg-button);
-  color: var(--text-light);
-  font-size: 1rem;
-  border: none;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  text-transform: uppercase;
-}
+// .cookie-bar button {
+//   background: var(--bg-button);
+//   color: var(--text-light);
+//   font-size: 1rem;
+//   border: none;
+//   padding: 0.5rem 1rem;
+//   cursor: pointer;
+//   text-transform: uppercase;
+// }
 
 // Fade transition
 .fade-enter-active,

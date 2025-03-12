@@ -1,4 +1,3 @@
-
 <template>
   <Transition name="fade">
     <div v-if="isVisible" class="cookie-bar">

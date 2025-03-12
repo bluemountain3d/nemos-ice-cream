@@ -9,7 +9,7 @@ import CookieBar from '@/components/CookieBar/CookieBar.vue';
   <MainHeader />
   <RouterView />
   <MainFooter />
-  <CookieBar id="cookies"/>
+  <CookieBar id="cookies" />
 </template>
 
 <style scoped lang="scss">

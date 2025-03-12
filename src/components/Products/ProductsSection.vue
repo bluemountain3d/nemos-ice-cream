@@ -14,56 +14,52 @@ import ProductsList from '@/components/Products/ProductsList.vue';
 </template>
 
 <style scoped lang="scss">
-
 .page-section {
-  padding-top: 15vw;
+  padding-top: 18.5vw;
 
   .product-list-section {
-  background-color: var(--bg-section);
-  color: var(--text-primary);
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  background-image: url('@/assets/images/fish-background.webp');
-
-  h2 {
-    margin-top: 16px;
-    text-transform: uppercase;
-    text-align: center;
-    font-family: var(--ff-primary);
-    font-size: 2.5rem;
-    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  }
-}
-@media screen and (min-width: 768px) {
-  .product-list-section h2 {
-    font-size: var(--heading-1);
-  }
-
-  div {
-    display: grid;
+    background-color: var(--bg-section);
+    color: var(--text-primary);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    grid-template-columns: repeat(2, 1fr);
-    align-self: center;
-    gap: 60px;
-  }
-}
+    align-items: center;
+    overflow: hidden;
+    background-image: url('@/assets/images/fish-background.webp');
 
-@media screen and (min-width: 1024px) {
-  .product-list-section {
+    h2 {
+      margin-top: 16px;
+      text-transform: uppercase;
+      text-align: center;
+      font-family: var(--ff-primary);
+      font-size: 2.5rem;
+      text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .product-list-section h2 {
+      font-size: var(--heading-1);
+    }
 
     div {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      justify-items: center;
+      justify-content: center;
+      grid-template-columns: repeat(2, 1fr);
+      align-self: center;
+      gap: 60px;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .product-list-section {
+      div {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+      }
     }
   }
 }
-}
-
-
 </style>

@@ -5,7 +5,7 @@ import ProductsSection from '@/components/Products/ProductsSection.vue';
 
 <template>
   <main>
-    <HeroSection/>
-    <ProductsSection/>
+    <HeroSection />
+    <ProductsSection />
   </main>
 </template>

@@ -131,7 +131,7 @@ function resetForm() {
 .page-section {
   padding-top: 5.4375rem;
   @media screen and (min-width: 1024px) {
-    padding-top: 6.375rem;
+    padding-top: 7.375rem;
   }
 }
 .page_container {

@@ -4,10 +4,10 @@ import nemoLogo from '@/assets/images/nemo-logo.webp';
 
 <template>
   <footer>
+    <p class="footer-copyright">&copy; 2025, Clownfiskarna</p>
     <div class="footer-section-left">
       <div class="logo-container">
         <img :src="nemoLogo" alt="Nemo's logo" loading="lazy" width="882" height="1352" />
-        <small class="visually-hidden-mobile">&copy; 2025, Clownfiskarna</small>
       </div>
       <div>
         <h3>Visit Us</h3>
@@ -53,7 +53,6 @@ import nemoLogo from '@/assets/images/nemo-logo.webp';
           fill="#FFF3E0"
         />
       </svg>
-      <small class="visually-hidden-tablet">&copy; 2025, Clownfiskarna</small>
     </div>
   </footer>
 </template>
@@ -70,6 +69,14 @@ footer {
   font-size: 0.875rem;
   position: absolute;
   z-index: 9;
+
+  .footer-copyright {
+    font-size: 0.75rem;
+    position: absolute;
+    bottom: 0.5em;
+    right: 0.75em;
+    margin: 0;
+  }
 
   .visually-hidden-mobile {
     clip: rect(0 0 0 0);
@@ -90,6 +97,7 @@ footer {
       margin-block: 0;
       font-family: var(--ff-secondary);
       font-size: 1.5rem;
+      margin-top: 1.5rem;
     }
 
     img {
@@ -104,7 +112,7 @@ footer {
     p {
       display: flex;
       flex-direction: column;
-      margin-top: 0;
+      margin-block: 0;
 
       .street {
         width: 11ch;
@@ -122,16 +130,20 @@ footer {
     svg {
       grid-row: 3;
     }
-
-    small {
-      grid-row: 4;
-    }
   }
 }
 
 @media screen and (min-width: 768px) {
   footer {
     font-size: 1rem;
+
+    .footer-copyright {
+      font-size: 0.875rem;
+      bottom: 0.5em;
+      right: unset;
+      left: 0.75em;
+      margin: 0;
+    }
 
     .visually-hidden-mobile {
       clip: auto;
@@ -162,11 +174,9 @@ footer {
           width: 6.438rem;
           height: 9.863rem;
         }
-
-        small {
-          margin-left: 1.438rem;
-          width: 17ch;
-        }
+      }
+      svg {
+        margin-top: 0.4rem;
       }
       .links-section {
         justify-self: start;
@@ -180,6 +190,11 @@ footer {
             position: relative;
             padding-left: 1.5rem;
             width: 11ch;
+            color: var(--text-link);
+
+            &:hover {
+              color: var(--text-light);
+            }
 
             &::before {
               content: '';
@@ -201,20 +216,22 @@ footer {
       justify-content: end;
       h1 {
         font-family: var(--ff-tertiary);
+        font-weight: 400;
         font-size: 6rem;
-        text-transform: uppercase;
+        line-height: 0.8;
+        text-transform: lowercase;
         margin: 0;
         text-align: end;
         align-self: end;
         justify-self: end;
         position: relative;
-        top: 2rem;
-        right: 2rem;
+        bottom: 0;
+        right: 1.5rem;
       }
     }
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1152px) {
   footer {
     .footer-section-left {
       gap: 5.375rem;
@@ -224,16 +241,11 @@ footer {
           height: 14.083rem;
         }
 
-        small {
-          font-size: 1rem;
-        }
       }
 
       h3 {
         font-size: var(--heading-2);
         width: 7ch;
-      }
-      .links-section {
       }
     }
 

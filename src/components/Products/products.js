@@ -1,13 +1,11 @@
 import { ref } from 'vue';
 
-
 import peachsFavorite from '@/assets/images/peachs-favorite-icecream.webp';
 import dorisDelight from '@/assets/images/doris-delight-icecream.webp';
 import nemosScoop from '@/assets/images/nemos-scoop-icecream.webp';
 import marlinsCinnamon from '@/assets/images/marlins-cinnamon-icecream.webp';
 import gillsSeaSaltToffee from '@/assets/images/gills-sea-salt-toffee-icecream.webp';
 import jawsomeBruce from '@/assets/images/jawsome-bruce-icecream.webp';
-
 
 const products = ref([
   {
@@ -73,7 +71,7 @@ const products = ref([
   {
     id: 6,
     img: {
-      src:  jawsomeBruce,
+      src: jawsomeBruce,
       alt: 'Jawsome Bruce Ice Cream',
       loading: 'lazy',
       width: 3024,
@@ -83,6 +81,5 @@ const products = ref([
     flavor: 'Rasberry',
   },
 ]);
-
 
 export default products;

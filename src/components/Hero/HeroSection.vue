@@ -22,7 +22,9 @@ import iceCreamFishLg from '@/assets/images/ice-cream-fish-w880.webp';
       </div>
       <div class="hero__cta">
         <p class="hero__cta-text">Check out our new and<br />yummy flavours!</p>
-        <button class="primary-btn" aria-label="View new ice cream flavors">Click here</button>
+        <a href="#products" class="primary-btn" aria-label="View new ice cream flavors"
+          >Click here</a
+        >
       </div>
     </div>
     <div class="hero__wave-container" aria-hidden="true">

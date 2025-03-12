@@ -48,7 +48,14 @@ body {
   line-height: 1.5;
   letter-spacing: -2.2%;
   color: var(--text-primary);
-  overflow-x: clip;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  &:visited {
+    color: inherit;
+  }
 }
 
 .heading-1 {

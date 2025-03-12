@@ -25,7 +25,7 @@ export default [
         {
           // Limit empty lines
           max: 2, // General maximum
-          maxEOF: 10, // Maximum at end of file
+          maxEOF: 1, // Maximum at end of file
           maxBOF: 0, // Maximum at beginning of file
         },
       ],

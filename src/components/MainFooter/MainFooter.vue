@@ -1,5 +1,6 @@
 <script setup>
 import nemoLogo from '@/assets/images/nemo-logo.webp';
+import starIcon from '@/assets/images/star-icon.svg';
 </script>
 
 <template>
@@ -197,14 +198,15 @@ footer {
             }
 
             &::before {
-              content: '';
+              content: url('/src/assets/images/star-icon.svg');
               position: absolute;
               left: 0;
               width: 1rem;
               height: 1rem;
-              background-image: url(assets/images/star-icon.svg);
-              background-size: contain;
-              background-repeat: no-repeat;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              object-fit: contain;
             }
           }
         }

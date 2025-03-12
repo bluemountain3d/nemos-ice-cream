@@ -227,6 +227,7 @@ footer {
         position: relative;
         bottom: 0;
         right: 1.5rem;
+        overflow: clip;
       }
     }
   }
@@ -240,7 +241,6 @@ footer {
           width: 9.188rem;
           height: 14.083rem;
         }
-
       }
 
       h3 {

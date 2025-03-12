@@ -73,12 +73,23 @@ body {
   background-color: var(--bg-button);
   color: var(--text-light);
   border: none;
+  text-decoration: none;
 
   transition: background-color 0.15s ease;
 
-  &:hover:not(:disabled) {
+  &:visited {
+    color: inherit;
+  }
+
+  &:hover:not(:disabled),
+  &:focus-visible:not(:disabled) {
     cursor: pointer;
     background-color: #2d6c93;
+  }
+
+  &:focus-visible {
+    outline: 3px solid #439ed7;
+    outline-offset: 2px;
   }
 
   &:active {

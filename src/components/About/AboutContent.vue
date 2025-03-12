@@ -22,21 +22,20 @@ function resetForm() {
 </script>
 
 <template>
-
   <!-- <div id="headerBackground">
     <p>Nemo's Ice Cream</p>
   </div> -->
 
   <section class="page-section">
-    <section class=" page_container">
+    <section class="page_container">
       <div class="about__text_container">
         <article class="about_text">
           <h1 class="about_title">about us</h1>
           <p>
             At Nemo’s Ice Cream, we believe that every scoop should be an adventure! Inspired by the
-            wonders of the ocean, we craft artisanal ice cream that blends bold flavors with stunning,
-            sea-inspired designs. From vibrant coral swirls to deep-sea blues, every creation is a
-            tribute to the beauty of the underwater world.
+            wonders of the ocean, we craft artisanal ice cream that blends bold flavors with
+            stunning, sea-inspired designs. From vibrant coral swirls to deep-sea blues, every
+            creation is a tribute to the beauty of the underwater world.
           </p>
           <p>
             Sustainability is at the heart of what we do. We use natural ingredients, eco-friendly
@@ -45,12 +44,12 @@ function resetForm() {
           </p>
           <p>
             Whether you're diving into a classic flavor or exploring something new, Nemo’s Ice Cream
-            brings joy, creativity, and a splash of ocean magic to every scoop. So grab your spoon and
-            just keep scooping!
+            brings joy, creativity, and a splash of ocean magic to every scoop. So grab your spoon
+            and just keep scooping!
           </p>
         </article>
       </div>
-      <div>
+      <div id="contact">
         <img class="nemo_icon_solid" :src="nemoIconSolid" alt="picture of a clownfish" />
         <div class="form_container">
           <h2 class="about_title">contact</h2>
@@ -104,7 +103,6 @@ function resetForm() {
 </template>
 
 <style scoped lang="scss">
-
 // #headerBackground {
 //   background-color: var(--bg-header);
 //   height: 50px;
@@ -157,11 +155,9 @@ function resetForm() {
     grid-template-columns: 1fr 1fr;
     padding: 3.375rem 6.438rem;
   }
-
 }
-.about_text_container{
+.about_text_container {
   display: grid;
-
 }
 //----------------TITLE----------------
 .about_title {
@@ -171,8 +167,8 @@ function resetForm() {
   font-size: 2.5rem;
   font-weight: 400;
   line-height: 1.5;
-  margin-bottom: .4375rem;
-  filter: drop-shadow(0 .25rem .125rem rgba(0,0,0,.25));
+  margin-bottom: 0.4375rem;
+  filter: drop-shadow(0 0.25rem 0.125rem rgba(0, 0, 0, 0.25));
 
   @media screen and (min-width: 768px) {
     font-size: var(--heading-1);
@@ -197,14 +193,12 @@ function resetForm() {
 
   @media screen and (min-width: 768px) {
     padding-block-end: 4.5rem;
-
   }
 
   @media screen and (min-width: 1024px) {
     padding-inline-end: min(8vw, 1440px * 0.08);
     padding-block-end: 0;
     border-bottom: 0;
-
   }
 }
 //----------------IMAGE---------------
@@ -235,7 +229,6 @@ function resetForm() {
   margin-inline: auto;
 
   @media screen and (min-width: 768px) {
-    
     margin-top: 2.625rem;
   }
 
@@ -244,14 +237,12 @@ function resetForm() {
     max-width: fit-content;
     margin-inline: 0;
   }
-  h2{
+  h2 {
     margin-inline: auto;
     @media screen and (min-width: 1024px) {
       padding-inline-start: min(8vw, 1440px * 0.08);
-      
+    }
   }
-  }
-
 }
 
 form {
@@ -273,7 +264,6 @@ form {
     padding: 0.4167em;
     border: 1px solid var(--text-primary);
     line-height: 1;
-
   }
   .input_group {
     display: flex;
@@ -287,7 +277,6 @@ form {
       align-items: flex-start;
     }
   }
-
 
   textarea {
     width: 100%;

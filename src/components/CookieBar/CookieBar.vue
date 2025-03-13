@@ -1,15 +1,15 @@
 <template>
   <Transition name="fade">
     <div v-if="isVisible" class="cookie-bar">
-      <div class="cookie-content">
+      <div class="cookie__content">
         <h3>We value your privacy</h3>
         <p>
           We use cookies to enhance your browsing experience. By clicking "Accept" you consent to
           our use of cookies.
         </p>
       </div>
-      <div class="buttons">
-        <button @click="declineCookies" class="decline primary-btn">Decline</button>
+      <div class="cookie__buttons">
+        <button @click="declineCookies" class="cookie__decline primary-btn">Decline</button>
         <button @click="acceptCookies" class="primary-btn">Accept</button>
       </div>
     </div>
@@ -68,24 +68,24 @@ const declineCookies = () => {
   }
 }
 
-.cookie-text {
+.cookie__text {
   display: flex;
   flex-direction: column;
   text-align: center;
   max-width: 70%;
 }
 
-.cookie-text h3 {
+.cookie__text h3 {
   margin: 0;
   font-size: 1rem;
 }
 
-.cookie-text p {
+.cookie__text p {
   margin: 1rem;
   font-size: 0.5rem;
 }
 
-.buttons {
+.cookie__buttons {
   display: flex;
   flex-direction: column;
   gap: 1rem;

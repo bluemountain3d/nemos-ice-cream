@@ -3,8 +3,8 @@ import ProductsList from '@/components/Products/ProductsList.vue';
 </script>
 
 <template>
-  <section class="page-section" id="products">
-    <section class="product-list-section">
+  <section class="products__page-section" id="products-section">
+    <section class="products__product-list-section">
       <h2>Our flavors</h2>
       <div>
         <ProductsList />
@@ -14,10 +14,10 @@ import ProductsList from '@/components/Products/ProductsList.vue';
 </template>
 
 <style scoped lang="scss">
-.page-section {
+.products__page-section {
   padding-top: 18.5vw;
 
-  .product-list-section {
+  .products__product-list-section {
     background-color: var(--bg-section);
     color: var(--text-primary);
     height: 100%;
@@ -39,7 +39,7 @@ import ProductsList from '@/components/Products/ProductsList.vue';
     }
   }
   @media screen and (min-width: 768px) {
-    .product-list-section h2 {
+    .products__product-list-section h2 {
       font-size: var(--heading-1);
     }
 
@@ -53,7 +53,7 @@ import ProductsList from '@/components/Products/ProductsList.vue';
   }
 
   @media screen and (min-width: 1024px) {
-    .product-list-section {
+    .products__product-list-section {
       div {
         display: grid;
         grid-template-columns: repeat(3, 1fr);

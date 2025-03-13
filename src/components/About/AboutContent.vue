@@ -16,7 +16,7 @@ function checkFormValidity() {
   return form.name && form.email && form.subject && form.message;
 }
 
-function resetForm() { 
+function resetForm() {
   form.value = { name: '', email: '', phone: '', subject: '', message: '' };
 }
 </script>

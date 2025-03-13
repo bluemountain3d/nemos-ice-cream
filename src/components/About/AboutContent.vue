@@ -27,10 +27,10 @@ function resetForm() {
   </div> -->
 
   <section class="page-section">
-    <section class="page_container">
-      <div class="about__text_container">
-        <article class="about_text">
-          <h1 class="about_title">about us</h1>
+    <section class="page__container">
+      <div class="about__text-container">
+        <article class="about__text">
+          <h1 class="about__title">about us</h1>
           <p>
             At Nemo’s Ice Cream, we believe that every scoop should be an adventure! Inspired by the
             wonders of the ocean, we craft artisanal ice cream that blends bold flavors with
@@ -50,36 +50,36 @@ function resetForm() {
         </article>
       </div>
       <div id="contact">
-        <img class="nemo_icon_solid" :src="nemoIconSolid" alt="picture of a clownfish" />
-        <div class="form_container">
-          <h2 class="about_title">contact</h2>
-          <form id="contact_formula">
-            <div class="input_group">
+        <img class="nemo-icon__solid" :src="nemoIconSolid" alt="picture of a clownfish" />
+        <div class="form__container">
+          <h2 class="about__title">contact</h2>
+          <form id="contact-formula">
+            <div class="input__group">
               <label for="name">Name*</label>
               <input type="text" id="name" v-model="form.name" required />
             </div>
 
-            <div class="input_group">
+            <div class="input__group">
               <label for="email">Email*</label>
               <input type="email" id="email" v-model="form.email" required />
             </div>
-            <div class="input_group">
+            <div class="input__group">
               <label for="phone">Phone</label>
               <input type="number" id="phone" v-model="form.phone" />
             </div>
-            <div class="input_group">
+            <div class="input__group">
               <label for="subject">Subject*</label>
               <input type="text" id="subject" v-model="form.subject" required />
             </div>
-            <div class="input_group input_group--column">
+            <div class="input__group input__group--column">
               <label for="message">Message*</label>
               <textarea id="message" v-model="form.message" required></textarea>
             </div>
           </form>
-          <div class="form_button">
+          <div class="form__button">
             <button
               type="reset"
-              form="contact_formula"
+              form="contact-formula"
               value="reset"
               class="primary-btn"
               @click="resetForm"
@@ -88,9 +88,9 @@ function resetForm() {
             </button>
             <button
               type="submit"
-              form="contact_formula"
+              form="contact-formula"
               value="submit"
-              class="primary-btn submit_button"
+              class="primary-btn submit__button"
               :disabled="!isFormValid"
             >
               Send
@@ -132,7 +132,7 @@ function resetForm() {
     padding-top: 7.375rem;
   }
 }
-.page_container {
+.page__container {
   display: grid;
   justify-content: center;
   align-items: start;
@@ -156,11 +156,11 @@ function resetForm() {
     padding: 3.375rem 6.438rem;
   }
 }
-.about_text_container {
+.about__text-container {
   display: grid;
 }
 //----------------TITLE----------------
-.about_title {
+.about__title {
   font-family: var(--ff-primary);
   margin: 0;
   text-align: center;
@@ -177,7 +177,7 @@ function resetForm() {
 }
 
 //----------------TEXT----------------
-.about_text {
+.about__text {
   width: 100%;
   max-width: 70ch;
   padding-block-end: 2.4375rem;
@@ -202,7 +202,7 @@ function resetForm() {
   }
 }
 //----------------IMAGE---------------
-.nemo_icon_solid {
+.nemo-icon__solid {
   display: none;
 
   @media screen and (min-width: 768px) {
@@ -221,7 +221,7 @@ function resetForm() {
 }
 
 //----------------FORM----------------
-.form_container {
+.form__container {
   display: grid;
   width: 100%;
   max-width: 31.25rem;
@@ -265,7 +265,7 @@ form {
     border: 1px solid var(--text-primary);
     line-height: 1;
   }
-  .input_group {
+  .input__group {
     display: flex;
     flex-flow: row nowrap;
     width: 100%;
@@ -290,7 +290,7 @@ form {
   }
 }
 
-.form_button {
+.form__button {
   display: flex;
   justify-content: flex-end;
   width: 100%;

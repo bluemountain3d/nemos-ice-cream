@@ -12,7 +12,7 @@ import products from '/src/components/Products/products.js';
       :height="product.img.height"
     />
     <div>
-      <h3 class="heading-3">{{ product.name }}</h3>
+      <h3 class="products__heading-3">{{ product.name }}</h3>
       <p>{{ product.flavor }}</p>
     </div>
   </article>

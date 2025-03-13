@@ -1,24 +1,23 @@
 <script setup>
 import nemoLogo from '@/assets/images/nemo-logo.webp';
-import starIcon from '@/assets/images/star-icon.svg';
 </script>
 
 <template>
-  <footer>
-    <p class="footer-copyright">&copy; 2025, Clownfiskarna</p>
-    <div class="footer-section-left">
-      <div class="logo-container">
+  <footer class="footer">
+    <p class="footer__copyright">&copy; 2025, Clownfiskarna</p>
+    <div class="footer__section-left">
+      <div class="footer__logo-container">
         <img :src="nemoLogo" alt="Nemo's logo" loading="lazy" width="882" height="1352" />
       </div>
       <div>
         <h3>Visit Us</h3>
         <p>
-          <span class="street">Faux Street 123</span>
+          <span class="footer__street">Faux Street 123</span>
           <span>Cityname</span>
           <span>123 45</span>
         </p>
         <svg
-          class="visually-hidden-mobile"
+          class="footer__visually-hidden-mobile"
           width="25"
           height="25"
           viewBox="0 0 25 25"
@@ -31,7 +30,7 @@ import starIcon from '@/assets/images/star-icon.svg';
           />
         </svg>
       </div>
-      <div class="links-section visually-hidden-mobile">
+      <div class="footer__links-section footer__visually-hidden-mobile">
         <h3>Links</h3>
         <ul>
           <li><RouterLink to="/about">About us</RouterLink></li>
@@ -39,10 +38,10 @@ import starIcon from '@/assets/images/star-icon.svg';
         </ul>
       </div>
     </div>
-    <div class="footer-section-right">
-      <h1 class="visually-hidden-mobile">Nemo</h1>
+    <div class="footer__section-right">
+      <h1 class="footer__visually-hidden-mobile">Nemo</h1>
       <svg
-        class="visually-hidden-tablet"
+        class="footer__visually-hidden-tablet"
         width="25"
         height="25"
         viewBox="0 0 25 25"
@@ -59,7 +58,7 @@ import starIcon from '@/assets/images/star-icon.svg';
 </template>
 
 <style scoped lang="scss">
-footer {
+.footer {
   background-color: var(--bg-footer);
   color: var(--text-light);
   width: 100vw;
@@ -71,7 +70,7 @@ footer {
   position: absolute;
   z-index: 9;
 
-  .footer-copyright {
+  .footer__copyright {
     font-size: 0.75rem;
     position: absolute;
     bottom: 0.5em;
@@ -79,7 +78,7 @@ footer {
     margin: 0;
   }
 
-  .visually-hidden-mobile {
+  .footer__visually-hidden-mobile {
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
     height: 1px;
@@ -88,7 +87,7 @@ footer {
     white-space: nowrap;
     width: 1px;
   }
-  .footer-section-left {
+  .footer__section-left {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
@@ -115,13 +114,13 @@ footer {
       flex-direction: column;
       margin-block: 0;
 
-      .street {
+      .footer__street {
         width: 11ch;
       }
     }
   }
 
-  .footer-section-right {
+  .footer__section-right {
     display: grid;
     grid-template-rows: repeat(4, 1fr);
     justify-items: end;
@@ -135,10 +134,10 @@ footer {
 }
 
 @media screen and (min-width: 768px) {
-  footer {
+  .footer {
     font-size: 1rem;
 
-    .footer-copyright {
+    .footer__copyright {
       font-size: 0.875rem;
       bottom: 0.5em;
       right: unset;
@@ -146,7 +145,7 @@ footer {
       margin: 0;
     }
 
-    .visually-hidden-mobile {
+    .footer__visually-hidden-mobile {
       clip: auto;
       clip-path: none;
       height: auto;
@@ -156,7 +155,7 @@ footer {
       width: auto;
     }
 
-    .visually-hidden-tablet {
+    .footer__visually-hidden-tablet {
       clip: rect(0 0 0 0);
       clip-path: inset(50%);
       height: 1px;
@@ -165,10 +164,10 @@ footer {
       white-space: nowrap;
       width: 1px;
     }
-    .footer-section-left {
+    .footer__section-left {
       grid-template-columns: repeat(3, 1fr);
       gap: 3.4rem;
-      .logo-container {
+      .footer__logo-container {
         display: flex;
         flex-direction: column;
         img {
@@ -179,7 +178,7 @@ footer {
       svg {
         margin-top: 0.4rem;
       }
-      .links-section {
+      .footer__links-section {
         justify-self: start;
         ul {
           padding: 0;
@@ -213,7 +212,7 @@ footer {
       }
     }
 
-    .footer-section-right {
+    .footer__section-right {
       grid-template-rows: 1fr;
       justify-content: end;
       h1 {
@@ -235,10 +234,10 @@ footer {
   }
 }
 @media screen and (min-width: 1152px) {
-  footer {
-    .footer-section-left {
+  .footer {
+    .footer__section-left {
       gap: 5.375rem;
-      .logo-container {
+      .footer__logo-container {
         img {
           width: 9.188rem;
           height: 14.083rem;
@@ -251,7 +250,7 @@ footer {
       }
     }
 
-    .footer-section-right {
+    .footer__section-right {
       h1 {
         font-size: 10rem;
       }

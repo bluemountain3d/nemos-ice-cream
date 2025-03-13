@@ -27,7 +27,7 @@
             </RouterLink>
           </li>
           <li class="header__menu-item">
-            <RouterLink to="/#products" class="header__menu-link" @click="toggleMenu">
+            <RouterLink to="/#products-section" class="header__menu-link" @click="toggleMenu">
               Products
             </RouterLink>
           </li>

@@ -46,7 +46,7 @@ import iceCreamFishLg from '@/assets/images/ice-cream-fish-w880.webp';
         />
       </svg>
     </div>
-    <a href="#products" class="hero__go-down" aria-label="Scroll down to products section">
+    <a href="#products-section" class="hero__go-down" aria-label="Scroll down to products section">
       <svg class="hero__go-down-svg" viewBox="0 0 104 68" xmlns="http://www.w3.org/2000/svg">
         <path
           class="hero__go-down-path"

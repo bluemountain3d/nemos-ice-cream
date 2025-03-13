@@ -40,15 +40,6 @@
 </template>
 
 <script setup>
-// TODO:
-
-// fixa nav-width???
-// gör cookie-bar!!!!!!
-
-// Fråga om:
-// Border på menyknappen när den klickas på. Ganska fult men behövs
-// det för tillgängligheten?
-
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 import openMenuIcon from '@/assets/images/BurgerMenuWhite.svg';
 import closeMenuIcon from '@/assets/images/x.svg';
@@ -103,11 +94,6 @@ onBeforeUnmount(() => {
     position: absolute;
     top: 0.8rem;
     font-weight: 800;
-
-    // &:hover,
-    // &:focus {
-    //   text-decoration: underline;
-    // }
 
     @media screen and (min-width: 720px) {
       font-size: var(--fs-400);

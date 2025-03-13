@@ -97,16 +97,6 @@ const declineCookies = () => {
   }
 }
 
-// .cookie-bar button {
-//   background: var(--bg-button);
-//   color: var(--text-light);
-//   font-size: 1rem;
-//   border: none;
-//   padding: 0.5rem 1rem;
-//   cursor: pointer;
-//   text-transform: uppercase;
-// }
-
 // Fade transition
 .fade-enter-active,
 .fade-leave-active {

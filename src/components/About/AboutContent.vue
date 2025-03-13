@@ -16,16 +16,12 @@ function checkFormValidity() {
   return form.name && form.email && form.subject && form.message;
 }
 
-function resetForm() {
+function resetForm() { 
   form.value = { name: '', email: '', phone: '', subject: '', message: '' };
 }
 </script>
 
 <template>
-  <!-- <div id="headerBackground">
-    <p>Nemo's Ice Cream</p>
-  </div> -->
-
   <section class="page-section">
     <section class="page_container">
       <div class="about__text_container">
@@ -58,7 +54,6 @@ function resetForm() {
               <label for="name">Name*</label>
               <input type="text" id="name" v-model="form.name" required />
             </div>
-
             <div class="input_group">
               <label for="email">Email*</label>
               <input type="email" id="email" v-model="form.email" required />
@@ -103,28 +98,6 @@ function resetForm() {
 </template>
 
 <style scoped lang="scss">
-// #headerBackground {
-//   background-color: var(--bg-header);
-//   height: 50px;
-//   width: 100%;
-//   position: sticky;
-//   z-index: 2;
-// }
-
-// #headerBackground p { // Header text
-//   color: var(--text-light);
-//   font-family: var(--ff-secondary);
-//   font-size: 24px;
-//   padding-left: 24px;
-//   position: fixed;
-//   top: -24px;
-//   height: 50px;
-//   width: 100%;
-//   font-weight: 800;
-//   padding-top: 7px;
-//   background-color: var(--bg-header);
-// }
-
 //----------------PAGE SECTION----------------
 .page-section {
   padding-top: 5.4375rem;

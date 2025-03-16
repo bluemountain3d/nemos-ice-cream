@@ -80,7 +80,7 @@ a {
   padding-block: 0.291667em;
   padding-inline: 1.083333em;
   background-color: var(--bg-button);
-  color: var(--text-light);
+  color: var(--text-light) !important;
   border: none;
   text-decoration: none;
 

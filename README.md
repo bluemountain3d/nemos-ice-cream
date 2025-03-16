@@ -105,15 +105,17 @@ pnpm build
 
 ```
 nemos-ice-cream/
+├── Assets/           # Assets from design team
 ├── public/           # Static assets
 ├── src/
 │   ├── assets/       # Images, fonts, etc.
 │   ├── components/   # Vue components
 │   ├── router/       # Vue Router configuration
+│   ├── scss/         # SCSS Styling
 │   ├── views/        # Page components
 │   ├── App.vue       # Root component
 │   └── main.js       # Application entry point
-├── .eslintrc.js      # ESLint configuration
+├── eslint.config.js  # ESLint configuration
 ├── .prettierrc       # Prettier configuration
 ├── index.html        # HTML entry point
 ├── package.json      # Project dependencies and scripts

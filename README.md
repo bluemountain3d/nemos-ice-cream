@@ -1,124 +1,140 @@
-# Nemo's Ice Cream
+# 🍦 Nemo's Ice Cream
 
-This template should help get you started developing with Vue 3 in Vite.
+A visually stunning and interactive single-page application showcasing an ocean-themed artisanal ice cream brand.
 
-## Recommended IDE Setup
+![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vuedotjs&logoColor=fff)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 📖 Overview
 
-## Customize configuration
+Nemo's Ice Cream is a responsive web application that combines beautiful visuals with intuitive navigation to showcase a collection of ocean-inspired ice cream flavors. The application features animated elements, including waves and background fish that enhance the underwater theme and create an immersive user experience.
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## ✨ Features
 
-## Project Setup
+- **Responsive Design:** Fully optimized for both mobile and desktop experiences
+- **Interactive Elements:** Animated waves and swimming fish that respond to user scrolling
+- **Vue.js Routing:** Seamless navigation between Home and About/Contact pages
+- **Product Showcase:** Visually appealing display of ice cream flavors
+- **Contact Form:** User-friendly form for inquiries and feedback
+- **Accessibility:** Responsive burger menu for intuitive navigation
+- **Compliance:** Cookie consent banner adhering to privacy regulations
 
-```sh
-pnpm install
-```
+## 🖼️ Screenshots
 
-### Compile and Hot-Reload for Development
+<details>
+<summary><strong>Navigation Menu</strong></summary>
 
-```sh
-pnpm dev
-```
+| Mobile | Desktop |
+|--------|---------|
+| ![Mobile Menu](./assets/screenshots/screenshot_mobile_menu.png) | ![Desktop Menu](./assets/screenshots/screenshot_desktop_menu.png) |
 
-### Compile and Minify for Production
+</details>
+
+<details>
+<summary><strong>Home Page - Hero Section</strong></summary>
+
+| Mobile | Desktop |
+|--------|---------|
+| ![Mobile Hero](./assets/screenshots/screenshot_mobile_hero.png) | ![Desktop Hero](./assets/screenshots/screenshot_desktop_hero.png) |
+
+</details>
+
+<details>
+<summary><strong>Home Page - Product Section</strong></summary>
+
+| Mobile | Desktop |
+|--------|---------|
+| ![Mobile Products](./assets/screenshots/screenshot_mobile_products.png) | ![Desktop Products](./assets/screenshots/screenshot_desktop_products.png) |
+
+</details>
+
+<details>
+<summary><strong>About Page</strong></summary>
+
+| Mobile | Desktop |
+|--------|---------|
+| ![Mobile About](./assets/screenshots/screenshot_mobile_about.png) | ![Desktop About](./assets/screenshots/screenshot_desktop_about.png) |
+
+</details>
+
+## 🛠️ Technology Stack
+
+- **Frontend Framework:** Vue.js 3
+- **Build Tool:** Vite
+- **Styling:** SASS/SCSS
+- **Package Manager:** pnpm
+- **Code Quality:** ESLint, Prettier
+- **Version Control:** Git, GitHub
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (Latest LTS version recommended)
+- pnpm package manager
+
+### Installation
+
+1. Clone the repository
+   ```sh
+   git clone https://github.com/your-username/nemos-ice-cream.git
+   cd nemos-ice-cream
+   ```
+
+2. Install dependencies
+   ```sh
+   pnpm install
+   ```
+
+3. Start the development server
+   ```sh
+   pnpm dev
+   ```
+
+4. Open your browser and navigate to `http://localhost:5173`
+
+### Production Build
 
 ```sh
 pnpm build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+## 🧪 Project Structure
 
-```sh
-pnpm lint
+```
+nemos-ice-cream/
+├── public/           # Static assets
+├── src/
+│   ├── assets/       # Images, fonts, etc.
+│   ├── components/   # Vue components
+│   ├── router/       # Vue Router configuration
+│   ├── views/        # Page components
+│   ├── App.vue       # Root component
+│   └── main.js       # Application entry point
+├── .eslintrc.js      # ESLint configuration
+├── .prettierrc       # Prettier configuration
+├── index.html        # HTML entry point
+├── package.json      # Project dependencies and scripts
+└── vite.config.js    # Vite configuration
 ```
 
+## 🌊 Brand Story
 
-## Code Sprint
+Nemo's Ice Cream draws inspiration from the wonders of the ocean, crafting artisanal ice cream with bold flavors and sea-inspired designs, from coral swirls to deep-sea blues. Sustainability is at the core of our brand, using natural ingredients, eco-friendly packaging, and supporting ocean conservation efforts.
 
-### Description
-Nemo’s Ice Cream is a visually engaging and user-friendly single-page application designed to showcase a variety of delicious ice cream flavors. The site consists of two main pages (views) achievable via routing in vue:
-- **Home** features a welcoming hero section with eye-catching visuals, followed by a product section displaying all available ice cream flavors. Between these sections, animated waves create a smooth visual flow, and as users scroll down, background fish give the effect of diving underwater.
-- **About Us/Contact** includes an About Us section that shares the story behind Nemo’s Ice Cream. Inspired by the wonders of the ocean, the brand crafts artisanal ice cream with bold flavors and sea-inspired designs, from coral swirls to deep-sea blues. Sustainability is a key focus, using natural ingredients, eco-friendly packaging, and supporting ocean conservation. The page also features a contact form for inquiries or feedback.
+## 👥 Contributors
 
-For easy navigation, the site includes a responsive burger menu, allowing users to switch between sections seamlessly. A footer is present on all pages, featuring the Nemo’s Ice Cream logo and useful navigation links. Additionally, a cookie consent banner ensures compliance with privacy regulations while enhancing the user experience.
+- [Egil Eskilsson](https://github.com/bluemountain3d)
+- [Jonatan Hellberg](https://github.com/JHellberg04)
+- [Ephraim Axelsson](https://github.com/EphraimAxelsson)
+- [Emelie Sonja Boss](https://github.com/EmelieSonjaBoss)
 
-### Team members
-[Egil Eskilsson](https://github.com/bluemountain3d)
- 
-[Jonatan Hellberg](https://github.com/JHellberg04)
+## 📝 License
 
-[Ephraim Axelsson](https://github.com/EphraimAxelsson)
+This project is available as a portfolio piece and is not licensed for commercial use without permission.
 
-[Emelie Boss](https://github.com/EmelieSonjaBoss)
+---
 
-### Screenshots
-
-<details>
-<summary><strong>Menu</strong> <i>(2 images)</i></summary>
-
-##### Mobile
-![Mobile - Menu](./assets/screenshots/screenshot_mobile_menu.png)
-
-##### Desktop
-![Desktop - Menu](./assets/screenshots/screenshot_desktop_menu.png)
-
-</details>
-
-
-<details>
-<summary><strong>Start page - Hero S/ctionstrong> <i>(> 2mages)</i></summary>
-
-##### Mobile
-![Mobile - Hero](./assets/screenshots/screenshot_mobile_hero.png)
-
-##### Desktop
-![Desktop - Hero](./assets/screenshots/screenshot_desktop_hero.png)
-</details>
-
-<details>
-<summary><strong>Start page - Product Section</strong> <i>(2 images)</i></summary>
-
-##### Mobile
-![Mobile - Products](./assets/screenshots/screenshot_mobile_products.png)
-
-##### Desktop
-![Desktop - Products](./assets/screenshots/screenshot_desktop_products.png)
-</details>
-
-
-<details>
-<summary><strong>About page</strong> <i>(2 images)</i></summary>
-
-##### Mobile
-![Mobile - About](./assets/screenshots/screenshot_mobile_about.png)
-
-##### Desktop
-![Desktop - About](./assets/screenshots/screenshot_desktop_about.png)
-</details>
-
-
-### Techstack
-
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-
-![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
-
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-
-[![Visual Studio Code](https://custom-icon-badges.demolab.com/badge/Visual%20Studio%20Code-0078d7.svg?logo=vsc&logoColor=white)](#)
-
-[![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white)](#)
-
-![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
-
-[![pnpm](https://img.shields.io/badge/pnpm-F69220?logo=pnpm&logoColor=fff)](#)
-
-[![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?logo=vuedotjs&logoColor=fff)](#)
-
-![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)
-
-![Prettier](https://img.shields.io/badge/prettier-%23F7B93E.svg?style=for-the-badge&logo=prettier&logoColor=black)
+*This project was created as part of a school assignment and has been adapted for portfolio purposes.*

@@ -6,7 +6,7 @@ import vueDevTools from 'vite-plugin-vue-devtools';
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/bluemountain3d.github.io/nemos-ice-cream/',
+  base: '/nemos-ice-cream/',
   plugins: [vue(), vueDevTools()],
   resolve: {
     alias: {
